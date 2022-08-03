@@ -70,3 +70,13 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
   - `git commit -m "Messagem do que você fez"`
 7. Agora seu código está pronto para ser enviado para o Github. Comando para enviar
   - `git push`
+
+### Criando Pull Request da nova branch
+
+1. Ir até o Github, no projeto.
+2. Assim que você fez o `git push` da sua nova branch. Irá aparecer uma messagem para você no repositório com um botão verde "Criar Pull Request"
+3. Clique no botão "Criar Pull Request"
+4. Coloque um título do Pull Request
+5. Coloque uma descrição do Pull Request
+6. Clique no botão  "Criar Pull Request"
+7. Pronto, agora seu Pull Request foi criado e poderá ser revisado por outros desenvolvedores
