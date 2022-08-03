@@ -2,7 +2,14 @@
 
 Repositório focado para turma de Laboratório de Programação II - Cesmac - 2022.2
 
-[Ruby Installer 3.1.2](https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.1.2-1/rubyinstaller-devkit-3.1.2-1-x64.exe)
+## Links úteis
+- [Ruby Installer 3.1.2](https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.1.2-1/rubyinstaller-devkit-3.1.2-1-x64.exe)
+- [Ruby Doc](https://ruby-doc.org/)
+- 2Devs Podcast:
+  - [SimpleCast](https://2devs.simplecast.com/)
+  - [Spotify](https://open.spotify.com/show/5PhTDolt2xc9gne9AAUaPL)
+- [Rachid - Youtube](https://www.youtube.com/channel/UCvsfG5lPPS4ehw42HhQYPYw)
+- [Jackson Pires - Curso para Iniciantes](https://youtube.com/playlist?list=PLe3LRfCs4go-mkvHRMSXEOG-HDbzesyaP)
 
 ## Como serão distribuídas as notas
 
