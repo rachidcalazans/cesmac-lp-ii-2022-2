@@ -9,7 +9,7 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
   - [SimpleCast](https://2devs.simplecast.com/)
   - [Spotify](https://open.spotify.com/show/5PhTDolt2xc9gne9AAUaPL)
 - [Rachid - Youtube](https://www.youtube.com/channel/UCvsfG5lPPS4ehw42HhQYPYw)
-- [Jackson Pires - Curso para Iniciantes](https://youtube.com/playlist?list=PLe3LRfCs4go-mkvHRMSXEOG-HDbzesyaP)
+- [Jackson Pires - Curso para Iniciantes - Youtube](https://youtube.com/playlist?list=PLe3LRfCs4go-mkvHRMSXEOG-HDbzesyaP)
 
 ## Como serão distribuídas as notas
 
