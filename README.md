@@ -87,3 +87,19 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
 5. Coloque uma descrição do Pull Request
 6. Clique no botão  "Criar Pull Request"
 7. Pronto, agora seu Pull Request foi criado e poderá ser revisado por outros desenvolvedores
+
+## Setup
+
+Instalar ruby versão 3.1.2
+
+Após o ruby instalado, execute:
+
+- `gem install bundler`
+- `bundle install`
+
+## Executar os testes
+
+No terminal execute o seguinte comando:
+
+- `ruby -Ilib:test {pasta_da_aula}/test/{arquivo_test.rb}`
+- Exemplo real: `ruby -Ilib:test 01_ruby_e_testes/test/test_minitest.rb`
