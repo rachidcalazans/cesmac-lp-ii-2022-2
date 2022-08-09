@@ -2,7 +2,8 @@ require 'minitest/autorun' #Require serve para chaamr uma biblioteca para o arqu
 
 class TestMinitest < Minitest::Test
     def test_compara #def = definição, função
-        nome = 'Kleber'
-        assert_equal 'kleber', nome
+        nome = 'Kleber e Felipe'
+        assert_equal 'Kleber e Felipe', nome
+    
     end
 end
