@@ -1,3 +1,3 @@
-source 'http://rubygems.com'
+source 'http://rubygems.org'
 
 gem 'minitest'
