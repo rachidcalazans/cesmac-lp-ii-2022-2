@@ -8,7 +8,7 @@ class TestMinitest < Minitest::Test
     end
 
     def test_skipped
-        skipad
+        skip
         name = 'Mateus'
         assert_equal 'Mateus', name
     end
