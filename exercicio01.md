@@ -4,4 +4,5 @@
 2. Atualize esse arquivo com seu nome completo e número de matrícula
 2. Crie um novo Pull Request
 
-## [Nome Completo] [Matrícula]
+## [Rogério Oliveira] [2213975751]
+## [Higor Soares] [2213976359]
