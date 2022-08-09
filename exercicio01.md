@@ -4,4 +4,5 @@
 2. Atualize esse arquivo com seu nome completo e número de matrícula
 2. Crie um novo Pull Request
 
-## [Bruno da Rocha bastos] [2213975396]
+## [Vinícius Cerqueira de Araújo Oliveira Gomes] [2213975274]
+## [Pedro Henrique Fonsêca Barros] [2213974494]
