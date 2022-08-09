@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-class TestMinitest < minitest::Test
+class TestMinitest < Minitest::Test
     def test_sucesso
         nome = 'Aldo'
         assert_equal 'Aldo', nome
