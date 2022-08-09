@@ -4,4 +4,4 @@
 2. Atualize esse arquivo com seu nome completo e número de matrícula
 2. Crie um novo Pull Request
 
-## [Pedro Lucas Gomes Pineiro Neiva Pires] [221397546]
+## [Bruno da Rocha bastos] [2213975396]
