@@ -1,0 +1,4 @@
+source 'http://rubygems.org'  #site oficial das bibliotecas de projetos do Ruby
+
+gem 'minitest' #biblioteca que será utilizada no projeto + a versão após a vírgula, caso seja necessário especificar (se deixar sem, baixará o mais recente)
+
