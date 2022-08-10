@@ -76,7 +76,8 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
 6. Comando para dizer que o código está pronto para ser enviado. Será feito um `commit` do código
   - `git commit -m "Messagem do que você fez"`
 7. Agora seu código está pronto para ser enviado para o Github. Comando para enviar
-  - `git push`
+  - `git push -u origin rachid/exercicio01`
+    - Lembrar de trocar `rachid/exercicio01` pelo nome da sua branch
 
 ### Criando Pull Request da nova branch
 
@@ -87,3 +88,19 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
 5. Coloque uma descrição do Pull Request
 6. Clique no botão  "Criar Pull Request"
 7. Pronto, agora seu Pull Request foi criado e poderá ser revisado por outros desenvolvedores
+
+## Setup
+
+Instalar ruby versão 3.1.2
+
+Após o ruby instalado, execute:
+
+- `gem install bundler`
+- `bundle install`
+
+## Executar os testes
+
+No terminal execute o seguinte comando:
+
+- `ruby -Ilib:test {pasta_da_aula}/test/{arquivo_test.rb}`
+- Exemplo real: `ruby -Ilib:test 01_ruby_e_testes/test/test_minitest.rb`
