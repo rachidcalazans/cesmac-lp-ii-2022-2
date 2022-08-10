@@ -76,7 +76,8 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
 6. Comando para dizer que o código está pronto para ser enviado. Será feito um `commit` do código
   - `git commit -m "Messagem do que você fez"`
 7. Agora seu código está pronto para ser enviado para o Github. Comando para enviar
-  - `git push`
+  - `git push -u origin rachid/exercicio01`
+    - Lembrar de trocar `rachid/exercicio01` pelo nome da sua branch
 
 ### Criando Pull Request da nova branch
 
