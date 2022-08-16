@@ -79,7 +79,7 @@ class TestTipoVariavel < Minitest::Test
   def test_passar_index_que_nao_existe_array
     string_array = ['a', 'b', 'c']
 
-    assert_nil string_array[20]
+    assert_nil string_array[10]
   end
 
   def test_adicionar_elemento_no_array
