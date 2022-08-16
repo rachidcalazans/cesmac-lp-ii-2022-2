@@ -13,7 +13,7 @@ class TestDesafio < Minitest::Test
   end
 
   def test_soma
-    assert_equal 2, calculadora(1, 1, :+)
+    assert_equal 2, calculadora(1, 1, '+')
   end
 
   def test_subtracao
