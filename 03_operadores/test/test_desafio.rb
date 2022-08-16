@@ -8,40 +8,43 @@ require "minitest/autorun"
 
 class TestDesafio < Minitest::Test
 
+
   def calculadora(valor_a, valor_b, operador)
-    if (operador == '+')
+    case operador
+    when :+
       return valor_a + valor_b
-    elsif(operador == '-')
+    when '-'
       return valor_a - valor_b
-    elsif (operador == '*')
+    when '*'
       return valor_a * valor_b
-    elsif (operador == '**')
+    when '**'
       return valor_a ** valor_b
-    elsif (operador == '/')
+    when '/'
       return valor_a / valor_b
-    elsif (operador == '%')
+    when '%'
       return valor_a % valor_b
-    elsif (operador == '>')
+    when '>'
       return valor_a > valor_b
-    elsif (operador == '>=')
+    when '>='
       return valor_a >= valor_b
-    elsif (operador == '<')
+    when '<'
       return valor_a < valor_b
-    elsif (operador == '<=')
+    when '<='
       return valor_a <= valor_b
-    elsif (operador == '==')
+    when '=='
       return valor_a == valor_b
-    elsif (operador == '!=')
+    when '!='
       return valor_a != valor_b
     end
+    
     return nil
   end
 
   def test_soma
-    assert_equal 2, calculadora(1, 1, '+')
-    assert_equal 3, calculadora(1, 2, '+')
-    assert_equal 3, calculadora(2, 1, '+')
-    assert_equal 0, calculadora(-1, 1, '+')
+    assert_equal 2, calculadora(1, 1, :+) # : Símbolo - estudar
+    assert_equal 3, calculadora(1, 2, :+)
+    assert_equal 3, calculadora(2, 1, :+)
+    assert_equal 0, calculadora(-1, 1, :+)
   end
 
   def test_subtracao
@@ -71,6 +74,7 @@ class TestDesafio < Minitest::Test
     assert_equal 16, calculadora(16, 1, '/')
     assert_equal -8, calculadora(16, -2, '/')
     assert_equal 8, calculadora(-16, -2, '/')
+    #assert_nil calculadora(8, 0, '/')  estudar assert_nil
   end
 
   def test_modulo
