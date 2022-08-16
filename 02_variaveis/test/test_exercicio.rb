@@ -3,31 +3,31 @@ require "minitest/autorun"
 class TestExercicio < Minitest::Test
 
   def test_booleanos
-    boolean1 = false
-    boolean2 = true
+    boolean1 = true
+    boolean2 = false
 
     assert_equal true, boolean1
     assert_equal false, boolean2
 
     assert boolean1 != boolean2
+    
   end
 
   def test_inteiros
-    skip
+    
 
-    inteiro = 2
+    inteiro = 3
     inteiro2 = 3
 
-    assert_equal 1, inteiro
-    assert_equal 2, inteiro2
+    assert_equal 3, inteiro
+    assert_equal 3, inteiro2
     assert inteiro == inteiro2
     assert  inteiro.to_s, "#{inteiro2}"
   end
 
   def test_flutuantes
-    skip
 
-    flutuante = 105
+    flutuante = 1.05
     flutuante2 = 1.05
 
     assert_equal 1.05, flutuante
@@ -36,14 +36,14 @@ class TestExercicio < Minitest::Test
   end
 
   def test_strings
-    skip
+    
 
     string1 = 'Uma nova string'
-    string2 = 'Uma outra string' + 'com' + 'oncatenação'
+    string2 = 'Uma outra string' + ' com ' + 'oncatenação'
     string3 = ''
-    string3 << 'Outra '
-    string3 << 'nova '
-    string3 << 'string'
+    string3 << ' Outra '
+    string3 << ' nova '
+    string3 << ' string '
 
     assert_equal 'Uma nova string', string1
     assert_equal 'Uma outra string com oncatenação', string2
