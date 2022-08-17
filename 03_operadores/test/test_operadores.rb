@@ -1,6 +1,6 @@
 require "minitest/autorun"
 
-class TestOperadores < Minitest::Test
+class Testoperatores < Minitest::Test
 
   def test_aritmetica
     i1, i2 = 1, 2
@@ -17,7 +17,7 @@ class TestOperadores < Minitest::Test
     assert_equal 2, 11 % 3
   end
 
-  def test_comparacao
+  def test_comparation
     assert_equal false, 3 == 2
     assert_equal true, 3 != 2
     assert_equal true, 3 > 2
