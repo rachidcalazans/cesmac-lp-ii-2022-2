@@ -15,6 +15,12 @@ class TestDesafio < Minitest::Test
       return valor_a - valor_b
     elsif (operador == '*') then
       return valor_a * valor_b
+
+    elsif (operador == '**') then
+      return valor_a ** valor_b
+    elsif (operador == '/') then
+      return valor_a / valor_b
+
     end
       return nil
   end
@@ -32,11 +38,11 @@ class TestDesafio < Minitest::Test
   end
 
   def test_potencia
-    skip
+    assert_equal 8, calculadora( 2, 3, '**')
   end
 
   def test_divisao
-    skip
+    assert_equal 4, calculadora( 8, 2, '/')
   end
 
   def test_modulo
