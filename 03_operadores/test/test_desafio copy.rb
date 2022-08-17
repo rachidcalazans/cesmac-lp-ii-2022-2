@@ -50,7 +50,7 @@ class TestChallenge < Minitest::Test
     assert_equal 2.5, calculator(5, 2, '/')
   end
 
-  def test_module
+  def test_modulo
     assert_equal 1, calculator(9, 2, '%')
   end
 
