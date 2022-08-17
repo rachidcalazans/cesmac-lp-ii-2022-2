@@ -32,18 +32,22 @@ class TestChallenge < Minitest::Test
 
   def test_sum
     assert_equal 2, calculator(1, 1, '+')
+    assert_equal "Invalid Operation", calculator('teste', 4, '+')
   end
 
   def test_subtraction
     assert_equal 5, calculator(8, 3, '-')
+    assert_equal "Invalid Operation", calculator(15, 10, '--')
   end
 
   def test_multiplication
     assert_equal 12, calculator(6, 2, '*')
+    assert_equal "Invalid Operation", calculator(true, 6, '*')
   end
 
   def test_power
     assert_equal 8, calculator(2, 3, '**')
+    assert_equal "Invalid Operation", calculator(nil, 7, '**')
   end
 
   def test_division
@@ -57,5 +61,6 @@ class TestChallenge < Minitest::Test
 
   def test_comparison
     assert_equal true, calculator(1, 1, '=')
+    assert_equal false, calculator(1, 2, '=')
   end
 end
