@@ -19,7 +19,12 @@ class TestDesafio < Minitest::Test
       elsif operador == "**"
         return valor_a ** valor_b
       elsif operador == "/"
-        return valor_a / valor_b.to_f
+        if valor_b != 0
+          return valor_a / valor_b.to_f
+        else
+          puts 'Nao é possível dividir um numero por zero.'
+          return nil
+        end
       elsif operador == "%"
         return valor_a % valor_b
       elsif operador == "="
@@ -47,7 +52,8 @@ class TestDesafio < Minitest::Test
   end
 
   def test_divisao
-    assert_equal 17.5, calculadora(35, 2, '/')
+      assert_equal 17.5, calculadora(35, 2, '/')
+      assert_nil calculadora(15, 0, '/')
   end
 
   def test_modulo
