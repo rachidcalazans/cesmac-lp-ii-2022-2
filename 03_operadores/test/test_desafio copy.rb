@@ -56,5 +56,6 @@ class TestDesafio < Minitest::Test
 
   def test_comparacao
     assert_equal false, calculadora(23, 26, '=')
+  end
 
 end
