@@ -54,11 +54,48 @@ class Rem < Calculator
     end
 end
 
-class Compairson < Calculator
+class Compairson
+    def value
+        @value
+    end
 
-    def calc
-        @value.inject(:>=)
-    end 
+    def result
+        @result
+    end
+
+    def initialize(*args)
+        @value = args
+        @result = compare
+    end
+end 
+
+class BiggerThan < Compairson
+    def compare
+        @value.inject(:>)
+    end
 end
 
+class BiggerEqualThan < Compairson
+    def compare
+        @value.inject(:>=)
+    end
+end
+
+class LowerThan < Compairson
+    def compare
+        @value.inject(:<)
+    end
+end
+
+class LowerEqualThan < Compairson
+    def compare
+        @value.inject(:<=)
+    end
+end
+
+class Equal < Compairson
+    def compare
+        @value.inject(:==)
+    end
+end
 

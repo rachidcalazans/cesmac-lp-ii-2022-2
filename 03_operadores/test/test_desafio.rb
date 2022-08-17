@@ -26,7 +26,7 @@ class TestChallenge < Minitest::Test
   end
 
   def test_division
-    assert_equal 5, Div.new(25,5).result
+    assert_equal 5, Div.new(250,10,5).result
   end
 
   def test_remainder
@@ -34,9 +34,14 @@ class TestChallenge < Minitest::Test
   end
 
   def test_comparsion
-    assert_equal true, Compairson.new(120, 30).result
+    assert_equal true, BiggerThan.new(120, 30).result
+    assert_equal true, BiggerEqualThan.new(100, 100).result
+    assert_equal true, LowerThan.new(30, 90).result
+    assert_equal false, LowerEqualThan.new(101, 100).result
+    assert_equal false, Equal.new(10, 50).result
   end
 
   def test_boolean
+    assert_equal true, Mult.new(20,2).result > Sum.new(20,19).result || BiggerThan.new(30,120).result 
   end
 end
