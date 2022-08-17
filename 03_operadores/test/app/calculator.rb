@@ -1,4 +1,4 @@
-class Calculator
+class Calculator #superclass
 
     attr_reader :value
 
@@ -12,40 +12,55 @@ class Calculator
     end
 end
 
-class Sum < Calculator
+class Sum < Calculator # It'll sum the values
     
     def calc
         @value.inject(:+)
     end
 end
 
-class Sub < Calculator 
+# Sum.new(2,10,4).result
+# = 16
+
+class Sub < Calculator # It'll subtract the values
 
     def calc
         @value.inject(:-)
     end
 end
 
-class Mult < Calculator
+# Sub.new(2,10).result
+# = -8
+
+class Mult < Calculator # It'll multiply the values
 
     def calc
         @value.inject(:*)
     end
 end
 
-class Div < Calculator
+# Mult.new(2,10,3).result
+# = 60
+
+class Div < Calculator # It'll divide the values
 
     def calc
         @value.inject(:/)
     end
 end
 
-class Pow < Calculator
+# Div.new(20,2).result
+# = 10
+
+class Pow < Calculator # It'll power the values
     
     def calc
         @value.inject(:**)
     end
 end
+
+# Pow.new(8,2).result
+# = 64
 
 class Rem < Calculator
 
@@ -54,13 +69,13 @@ class Rem < Calculator
     end
 end
 
-class Compairson
+class Compairson # A new class to make the compairsons
     def value
         @value
     end
 
     def result
-        @result
+        @result 
     end
 
     def initialize(*args)
@@ -99,3 +114,25 @@ class Equal < Compairson
     end
 end
 
+class Increments
+
+    def self.increment(arg,arg2)
+        arg += arg2
+    end
+
+    def self.decrement(arg, arg2)
+        arg -= arg2
+    end
+
+    def self.division(arg, arg2)
+        arg /= arg2
+    end
+
+    def self.multiplication(arg, arg2)
+        arg *= arg2
+    end
+
+    def self.double_pipe(arg, arg2)
+        arg ||= arg2
+    end
+end

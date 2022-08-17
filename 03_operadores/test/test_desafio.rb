@@ -44,4 +44,14 @@ class TestChallenge < Minitest::Test
   def test_boolean
     assert_equal true, Mult.new(20,2).result > Sum.new(20,19).result || BiggerThan.new(30,120).result 
   end
+
+  def test_increment
+    x = 0
+    assert_equal 1, x = Increments.increment(x,1)
+    assert_equal -4, x = Increments.decrement(x, 5)
+    assert_equal -40, x = Increments.multiplication(x,10)
+    assert_equal -20, x = Increments.division(x, 2)
+    x = nil
+    assert_equal 2, Increments.double_pipe(x, 2)
+  end
 end
