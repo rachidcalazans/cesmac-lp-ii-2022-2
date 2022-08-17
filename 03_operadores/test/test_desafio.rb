@@ -1,10 +1,11 @@
 require "minitest/autorun"
+require "app/calculator"
 
-# Desafio
-# Vale 1.5 pontos válido se criar PR até 17/08/2022 23:59:59
+# Challenge
+# It's worth 1.5 points if the PR is created until 17/08/2022 23:59:59
 #
-# Implementar o método #calculadora
-# Adicionar assert_equal para cada método de teste com seu respectivo operador
+# Implement the method #calculator
+# Add an assert_equal to each test method with his respective operator
 
 class TestDesafio < Minitest::Test
 
@@ -12,25 +13,25 @@ class TestDesafio < Minitest::Test
     return nil
   end
 
-  def test_soma
-    assert_equal 2, calculadora(1, 1, '+')
+  def test_sum
+    assert_equal 2, calculadora(1, 1, :+)
   end
 
-  def test_subtracao
+  def test_subtraction
   end
 
-  def test_multiplicacao
+  def test_multiplication
   end
 
-  def test_potencia
+  def test_power
   end
 
-  def test_divisao
+  def test_division
   end
 
-  def test_modulo
+  def test_remainder
   end
 
-  def test_comparacao
+  def test_comparsion
   end
 end
