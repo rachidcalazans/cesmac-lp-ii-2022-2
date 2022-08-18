@@ -38,6 +38,14 @@ class TestDesafio < Minitest::Test
       return value_a && value_b
     when '||'
       return value_a || value_b
+    when '+='
+      return value_a += value_b
+    when '-='
+      return value_a -= value_b
+    when '/='
+      return value_a /= value_b
+    when '||='
+      return value_a ||= value_b
     end
     
     return nil
@@ -103,5 +111,15 @@ class TestDesafio < Minitest::Test
     assert_equal true, !calculator((a > 2),(b > 3), '&&')
     assert_equal true, calculator((a >= 2),(b > 3), '||')
     assert_equal true, calculator((a > 2),(b >= 3), '||')
+  end
+
+  def test_increment
+    a, b = 0, nil
+    assert_equal 1, calculator(a, 1, '+=')
+    assert_equal -1, calculator(a, -1, '+=')
+    assert_equal 5, calculator(a, 5, '+=')
+    assert_equal 4, calculator(a, -4, '-=')
+    assert_equal 2, calculator(a+4, 2, '/=')
+    assert_equal 3, calculator(b, 3, '||=')
   end
 end
