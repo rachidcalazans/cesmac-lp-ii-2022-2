@@ -9,28 +9,85 @@ require "minitest/autorun"
 class TestDesafio < Minitest::Test
 
   def calculadora(valor_a, valor_b, operador)
+    if (operador == '+') then
+      return valor_a + valor_b
+    elsif (operador == '-')
+      return valor_a - valor_b
+    elsif (operador == '*')
+      return valor_a * valor_b
+    elsif (operador == '**')
+      return valor_a ** valor_b
+    elsif (operador == '/')
+      return valor_a / valor_b
+    elsif (operador == '%')
+      return valor_a % valor_b
+    elsif (operador == '>')
+      return valor_a > valor_b
+    elsif (operador == '>=')
+      return valor_a >= valor_b
+    elsif (operador == '==')
+      return valor_a == valor_b
+    elsif (operador == '<')
+      return valor_a < valor_b
+    elsif (operador == '<=')
+      return valor_a <= valor_b
+    end
     return nil
   end
 
   def test_soma
     assert_equal 2, calculadora(1, 1, '+')
+    assert_equal 3, calculadora(1, 2, '+')
+    assert_equal 3, calculadora(2, 1, '+')
+    assert_equal 0, calculadora(-1, 1, '+')
+    assert_equal -1, calculadora(0, -1, '+')
   end
 
   def test_subtracao
+    assert_equal 0, calculadora(1, 1, '-')
+    assert_equal -1, calculadora(1, 2, '-')
+    assert_equal 1, calculadora(2, 1, '-')
+    assert_equal -2, calculadora(-1, 1, '-')
+    assert_equal 1, calculadora(0, -1, '-')
   end
 
   def test_multiplicacao
+    assert_equal 1, calculadora(1, 1, '*')
+    assert_equal 2, calculadora(1, 2, '*')
+    assert_equal 2, calculadora(2, 1, '*')
+    assert_equal -1, calculadora(-1, 1, '*')
+    assert_equal 0, calculadora(0, -1, '*')
   end
 
   def test_potencia
+    assert_equal 1, calculadora(1, 1, '**')
+    assert_equal 1, calculadora(1, 2, '**')
+    assert_equal 2, calculadora(2, 1, '**')
+    assert_equal 1, calculadora(-1, 2, '**')
+    assert_equal 1, calculadora(0, 0, '**')
   end
 
   def test_divisao
+    assert_equal 2, calculadora(4, 2, '/')
+    assert_equal 2, calculadora(2, 1, '/')
+    assert_equal -2, calculadora(2, -1, '/')
+    assert_equal 5, calculadora(10, 2, '/')
+    assert_equal 1, calculadora(2, 2, '/')
   end
 
   def test_modulo
+    assert_equal 0, calculadora(4, 2, '%')
+    assert_equal 0, calculadora(2, 1, '%')
+    assert_equal 1, calculadora(3, 2, '%')
+    assert_equal 0, calculadora(10, 2, '%')
+    assert_equal 0, calculadora(2, 2, '%')
   end
 
   def test_comparacao
+    assert_equal true, calculadora(4, 2, '>')
+    assert_equal true, calculadora(2, 1, '>')
+    assert_equal false, calculadora(3, 2, '<')
+    assert_equal false, calculadora(10, 2, '<')
+    assert_equal false, calculadora(2, 2, '>')
   end
 end
