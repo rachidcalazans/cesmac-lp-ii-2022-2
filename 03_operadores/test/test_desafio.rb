@@ -15,18 +15,21 @@ class TestDesafio < Minitest::Test
       return valor_a - valor_b
     elsif (operador == '*') then
       return valor_a * valor_b
-
     elsif (operador == '**') then
       return valor_a ** valor_b
     elsif (operador == '/') then
       return valor_a / valor_b
+    elsif (operador == '%') then
+      return (valor_a % valor_b)
+    elsif (operador == '==') then
+      return (valor_a == valor_b)
 
     end
       return nil
   end
 
   def test_soma
-    assert_equal 2, calculadora( 1, 1, '+')
+    assert_equal 2, calculadora(1, 1, '+')
     end
 
   def test_subtracao
@@ -46,10 +49,10 @@ class TestDesafio < Minitest::Test
   end
 
   def test_modulo
-    skip
+    assert_equal 1, calculadora( 7, 2, '%')
   end
 
   def test_comparacao
-    skip
+    assert_equal true, calculadora( 2, 2, '==')
   end
 end
