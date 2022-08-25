@@ -3,7 +3,7 @@ require "minitest/autorun"
 class TestExercicio < Minitest::Test
   # Functionality 1:
   # Return the month's name of the year to any number passed.
-  # In case is an invalid number, return an error message. 
+  # In case is an invalid number, return an error message.
 
   def month_check(month)
 
