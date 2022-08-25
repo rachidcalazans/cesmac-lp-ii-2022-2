@@ -21,7 +21,7 @@ class TestExercicio < Minitest::Test
     when 12 then return mes_escolhido = 'Dezembro'
     else
       mes_escolhido = 'Mes invalido'
-    end 
+    end
   end
 
     def test_mes
@@ -37,12 +37,9 @@ class TestExercicio < Minitest::Test
       assert_equal 'Outubro', mes_ano(10)
       assert_equal 'Novembro', mes_ano(11)
       assert_equal 'Dezembro', mes_ano(12)
-      assert_equal 'Setembro', mes_ano(42)
-      assert_equal 'Março', mes_ano(6)
-      assert_equal 'Setembro', mes_ano(16)
-
-      
+      assert_equal 'Mes invalido', mes_ano(15)
+      assert_equal 'Mes invalido', mes_ano(16)
+      assert_equal 'Setembro', mes_ano(7)
     end
-
 
 end
