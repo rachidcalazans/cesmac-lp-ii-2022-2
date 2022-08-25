@@ -3,6 +3,7 @@ require "minitest/autorun"
 class TestEstruturasDeControle < Minitest::Test
 
   def test_if_else
+    skip
     j = 10
 
     if j == 10
@@ -17,6 +18,7 @@ class TestEstruturasDeControle < Minitest::Test
   end
 
   def test_while_loop
+    skip
     i = 1
     resultado_final = 0
 
@@ -46,6 +48,7 @@ class TestEstruturasDeControle < Minitest::Test
     end
 
     def test_for_each_loop
+      skip
       resultado_final = 0;
 
       (1..5).each do |i|
@@ -73,6 +76,7 @@ class TestEstruturasDeControle < Minitest::Test
     end
 
     def test_switch_case
+      skip
       mes = 3
 
       case mes
