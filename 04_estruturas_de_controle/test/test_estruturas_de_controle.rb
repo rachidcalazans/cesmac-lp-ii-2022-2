@@ -46,7 +46,7 @@ class TestEstruturasDeControle < Minitest::Test
     end
 
     def test_for_each_loop
-      resultado_final = 0;
+      resultado_final = 0
 
       (1..5).each do |i|
         puts i
