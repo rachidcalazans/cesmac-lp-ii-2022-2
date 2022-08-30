@@ -39,7 +39,7 @@ class TestExercicio < Minitest::Test
 
   def test_loop_month
     for i in 1..15
-      if i <= 12
+      if (i <= 12)
         assert_equal month_check(i), $months[i]
       else
         assert_equal "Insert a valid month", month_check(i)
