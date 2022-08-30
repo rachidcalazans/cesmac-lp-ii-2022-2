@@ -1,36 +1,57 @@
 require "minitest/autorun"
+require_relative "app/calculator"
 
-# Desafio
-# Vale 1.5 pontos válido se criar PR até 17/08/2022 23:59:59
+# Challenge
+# It's worth 1.5 points if the PR is created until 17/08/2022 23:59:59
 #
-# Implementar o método #calculadora
-# Adicionar assert_equal para cada método de teste com seu respectivo operador
+# Implement the method #calculator
+# Add an assert_equal to each test method with his respective operator
 
-class TestDesafio < Minitest::Test
+class TestChallenge < Minitest::Test
 
-  def calculadora(valor_a, valor_b, operador)
-    return nil
+  def test_sum
+    assert_equal 3, Sum.new(1, 1, 1).result
   end
 
-  def test_soma
-    assert_equal 2, calculadora(1, 1, '+')
+  def test_subtraction
+    assert_equal 5, Sub.new(10,5).result
   end
 
-  def test_subtracao
+  def test_multiplication
+    assert_equal 20, Mult.new(1,10,2).result
   end
 
-  def test_multiplicacao
+  def test_power
+    assert_equal 64, Pow.new(8,2).result
   end
 
-  def test_potencia
+  def test_division
+    assert_equal 5, Div.new(250,10,5).result
   end
 
-  def test_divisao
+  def test_remainder
+    assert_equal 0, Rem.new(20,4).result
   end
 
-  def test_modulo
+  def test_comparsion
+    assert_equal true, BiggerThan.new(120, 30).result
+    assert_equal true, BiggerEqualThan.new(100, 100).result
+    assert_equal true, LowerThan.new(30, 90).result
+    assert_equal false, LowerEqualThan.new(101, 100).result
+    assert_equal false, Equal.new(10, 50).result
   end
 
-  def test_comparacao
+  def test_boolean
+    assert_equal true, Mult.new(20,2).result > Sum.new(20,19).result || BiggerThan.new(30,120).result 
+  end
+
+  def test_increment
+    x = 0
+    assert_equal 1, x = Increments.increment(x,1)
+    assert_equal -4, x = Increments.decrement(x, 5)
+    assert_equal -40, x = Increments.multiplication(x,10)
+    assert_equal -20, x = Increments.division(x, 2)
+    x = nil
+    assert_equal 2, Increments.double_pipe(x, 2)
   end
 end
