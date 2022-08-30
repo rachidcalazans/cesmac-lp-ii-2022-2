@@ -50,9 +50,13 @@ class TestExercicio < Minitest::Test
     assert_equal "October", month(10)
     assert_equal "November", month(11)
     assert_equal "December", month(12)
+  end
+
+  def test_invalid_month
     assert_nil month(-2)
     assert_nil month(0)
     assert_nil month(13)
+    assert_nil month("January")
   end
 
 end
