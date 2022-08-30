@@ -6,34 +6,10 @@ class TestExercicio < Minitest::Test
   # Caso seja um número inválido, retornar message de erro
 
   def name_of_month(month)
-    case month
-    when 1
-      return 'january'
-    when 2
-      return 'february'
-    when 3
-      return 'march'
-    when 4
-      return 'april'
-    when 5
-      return 'may'
-    when 6
-      return 'june'
-    when 7
-      return 'july'
-    when 8
-      return 'august'
-    when 9
-      return 'september'
-    when 10
-      return 'october'
-    when 11
-      return 'november'
-    when 12
-      return 'december'
-    else
-      return 'invalid'
-    end
+    return 'invalid' if month.nil? || month.is_a?(String) || month < 1 || month > 12
+
+    months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+    return months[month - 1]
   end
 
   def test_valid_month
