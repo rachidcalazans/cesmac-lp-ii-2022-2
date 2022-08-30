@@ -12,27 +12,27 @@ class TestDesafio < Minitest::Test
     case operator
     when :+
       return value_a + value_b
-    when '-'
+    when :-
       return value_a - value_b
-    when '*'
+    when :*
       return value_a * value_b
-    when '**'
+    when :**
       return value_a ** value_b
-    when '/'
+    when :/
       return value_a / value_b
-    when '%'
+    when :%
       return value_a % value_b
-    when '>'
+    when :>
       return value_a > value_b
-    when '>='
+    when :>=
       return value_a >= value_b
-    when '<'
+    when :<
       return value_a < value_b
-    when '<='
+    when :<=
       return value_a <= value_b
-    when '=='
+    when :==
       return value_a == value_b
-    when '!='
+    when :!=
       return value_a != value_b
     when '&&'
       return value_a && value_b
@@ -47,7 +47,6 @@ class TestDesafio < Minitest::Test
     when '||='
       return value_a ||= value_b
     end
-    
     return nil
   end
 
@@ -59,47 +58,47 @@ class TestDesafio < Minitest::Test
   end
 
   def test_subtracao
-    assert_equal 1, calculator(2, 1, '-')
-    assert_equal -1, calculator(1, 2, '-')
-    assert_equal -2, calculator(-1, 1, '-')
-    assert_equal 0, calculator(0, 0, '-')
+    assert_equal 1, calculator(2, 1, :-)
+    assert_equal -1, calculator(1, 2, :-)
+    assert_equal -2, calculator(-1, 1, :-)
+    assert_equal 0, calculator(0, 0, :-)
   end
 
   def test_multiplicacao
-    assert_equal 9, calculator(3, 3, '*')
-    assert_equal 0, calculator(0, 3, '*')
-    assert_equal 0, calculator(3, 0, '*')
-    assert_equal 4.5, calculator(3, 1.5, '*')
+    assert_equal 9, calculator(3, 3, :*)
+    assert_equal 0, calculator(0, 3, :*)
+    assert_equal 0, calculator(3, 0, :*)
+    assert_equal 4.5, calculator(3, 1.5, :*)
   end
 
   def test_exponentiation
-    assert_equal 16, calculator(4, 2, '**')
-    assert_equal 9, calculator(3, 2, '**')
-    assert_equal 1, calculator(4, 0, '**')
-    assert_equal 4, calculator(4, 1, '**')
-    assert_equal 4, calculator(-2, 2, '**')
+    assert_equal 16, calculator(4, 2, :**)
+    assert_equal 9, calculator(3, 2, :**)
+    assert_equal 1, calculator(4, 0, :**)
+    assert_equal 4, calculator(4, 1, :**)
+    assert_equal 4, calculator(-2, 2, :**)
   end
 
   def test_division
-    assert_equal 8, calculator(16, 2, '/')
-    assert_equal 16, calculator(16, 1, '/')
-    assert_equal -8, calculator(16, -2, '/')
-    assert_equal 8, calculator(-16, -2, '/')
-    #assert_nil calculator(8, 0, '/')  estudar assert_nil
+    assert_equal 8, calculator(16, 2, :/)
+    assert_equal 16, calculator(16, 1, :/)
+    assert_equal -8, calculator(16, -2, :/)
+    assert_equal 8, calculator(-16, -2, :/)
+    #assert_nil calculator(8, 0, :/)  estudar assert_nil
   end
 
   def test_modulo
-    assert_equal 1, calculator(7, 2, '%')
-    assert_equal 0, calculator(6, 2, '%')
-    assert_equal -1, calculator(7, -2, '%')
+    assert_equal 1, calculator(7, 2, :%)
+    assert_equal 0, calculator(6, 2, :%)
+    assert_equal -1, calculator(7, -2, :%)
     
   end
 
   def test_comparation
-    assert_equal true, calculator(7, 7, '==')
-    assert_equal true, calculator(7, 7, '<=')
-    assert_equal false, calculator(7, 7, '>')
-    assert_equal true, calculator(7, 9, '!=')
+    assert_equal true, calculator(7, 7, :==)
+    assert_equal true, calculator(7, 7, :<=)
+    assert_equal false, calculator(7, 7, :>)
+    assert_equal true, calculator(7, 9, :!=)
   end
   
   def test_boolean
