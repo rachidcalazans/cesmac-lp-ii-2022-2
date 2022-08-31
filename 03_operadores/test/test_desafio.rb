@@ -9,28 +9,61 @@ require "minitest/autorun"
 class TestDesafio < Minitest::Test
 
   def calculadora(valor_a, valor_b, operador)
-    return nil
-  end
 
-  def test_soma
-    assert_equal 2, calculadora(1, 1, '+')
-  end
+    if (operador == '+') then
+      return valor_a + valor_b
+    elsif (operador == '-') then
+      return valor_a - valor_b
+    elsif (operador == '*') then
+      return valor_a * valor_b
+    elsif (operador == '**') then
+      return valor_a ** valor_b
+    elsif (operador == '/') then
+      return valor_a / valor_b
+    elsif (operador == '%') then
+      return valor_a % valor_b
+    elsif (operador == '==') then
+      return valor_a == valor_b
+    elsif (operador == '<') then 
+      return valor_a < valor_b
+    elsif (operador == '>') then 
+      return valor_a < valor_b
+      return nil
+    end
+    end
+  
+    def test_soma
+      assert_equal 2, calculadora(1, 1, '+')
+      assert_equal 15, calculadora(7,8, '+')
 
-  def test_subtracao
-  end
-
-  def test_multiplicacao
-  end
-
-  def test_potencia
-  end
-
-  def test_divisao
-  end
-
-  def test_modulo
-  end
-
-  def test_comparacao
-  end
-end
+    end
+  
+    def test_subtracao
+      assert_equal 14, calculadora(20, 6, '-')
+      assert_equal 50, calculadora(100, 50, '-')
+    end
+  
+    def test_multiplicacao
+      assert_equal 25, calculadora(5, 5, '*')
+      assert_equal 16, calculadora(4, 4, '*')
+    end
+  
+    def test_potencia
+      assert_equal 9, calculadora(3, 2, '**')
+      assert_equal 4, calculadora(2, 2, '**')
+    end
+  
+    def test_divisao
+      assert_equal 7, calculadora(14, 2, '/')
+      assert_equal 10, calculadora(20, 2, '/')
+    end
+  
+    def test_modulo
+      assert_equal 1, calculadora(11, 2, '%')
+    end
+  
+    def test_comparacao
+      assert_equal true, calculadora(3, 3, '==')
+      assert_equal false, calculadora(4, 2, '<')
+    end
+  end  
