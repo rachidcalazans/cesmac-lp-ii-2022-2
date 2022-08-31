@@ -9,28 +9,50 @@ require "minitest/autorun"
 class TestDesafio < Minitest::Test
 
   def calculadora(valor_a, valor_b, operador)
-    return nil
+    if (operador == '+') then
+      return valor_a + valor_b
+    elsif (operador == '-') then
+      return valor_a - valor_b
+    elsif (operador == '*') then
+      return valor_a * valor_b
+    elsif (operador == '**') then
+      return valor_a ** valor_b
+    elsif (operador == '/') then
+      return valor_a / valor_b
+    elsif (operador == '%') then
+      return (valor_a % valor_b)
+    elsif (operador == '==') then
+      return (valor_a == valor_b)
+
+    end
+      return nil
   end
 
   def test_soma
     assert_equal 2, calculadora(1, 1, '+')
-  end
+    end
 
   def test_subtracao
+    assert_equal 1, calculadora(2, 1, '-')
   end
 
   def test_multiplicacao
+    assert_equal 2, calculadora( 1, 2, '*')
   end
 
   def test_potencia
+    assert_equal 8, calculadora( 2, 3, '**')
   end
 
   def test_divisao
+    assert_equal 4, calculadora( 8, 2, '/')
   end
 
   def test_modulo
+    assert_equal 1, calculadora( 7, 2, '%')
   end
 
   def test_comparacao
+    assert_equal true, calculadora( 2, 2, '==')
   end
 end
