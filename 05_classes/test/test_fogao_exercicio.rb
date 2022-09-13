@@ -30,6 +30,7 @@ class TestFogao < Minitest::Test
    end
 
    def test_desligar
+    
      fogao = Fogao.new('Brastemp', 4)
 
      fogao.desligar()
