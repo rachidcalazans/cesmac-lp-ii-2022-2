@@ -37,3 +37,5 @@ class TestFogao < Minitest::Test
      assert_equal false, fogao.ligado?()
    end
  end
+
+ 
