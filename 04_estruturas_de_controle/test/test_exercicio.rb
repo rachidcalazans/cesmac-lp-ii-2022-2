@@ -38,7 +38,7 @@ class TestExercicio < Minitest::Test
     end                
 end
 
-  def test_moth_name
+  def test_month_name
 
     assert_equal "January", month(1)
     assert_equal "February", month(2)
