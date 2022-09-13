@@ -15,6 +15,7 @@ class TestFogao < Minitest::Test
   end
 
   def test_fogao_brastemp
+
     fogao = Fogao.new('Brastemp', 4)
 
     assert_equal 'Brastemp', fogao.marca()
