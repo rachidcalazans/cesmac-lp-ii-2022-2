@@ -1,39 +1,39 @@
 require "minitest/autorun"
-# Importando a class Fogao que está nesse path
+# Importando a class stove que está nesse path
 require './05_classes/app/fogao'
 
 # Exercício:
 # - Fazer todos os testes passarem. Não é para alterar nada nesse arquivo de teste.
 # - Criar todos os métodos necessários
-class TestFogao < Minitest::Test
+class TestStove < Minitest::Test
 
-  def test_fogao_lg
-    fogao = Fogao.new('LG', 6)
+  def test_stove_lg
+    stove = Stove.new('LG', 6)
 
-    assert_equal 'LG', fogao.marca()
-    assert_equal 6, fogao.qtd_bocas()
+    assert_equal 'LG', stove.brand()
+    assert_equal 6, stove.burner_qty()
   end
 
-  def test_fogao_brastemp
-    fogao = Fogao.new('Brastemp', 4)
+  def test_stove_brastemp
+    stove = Stove.new('Brastemp', 4)
 
-    assert_equal 'Brastemp', fogao.marca()
-     assert_equal 4, fogao.qtd_bocas()
+    assert_equal 'Brastemp', stove.brand()
+     assert_equal 4, stove.burner_qty()
   end
 
    def test_ligar
-     fogao = Fogao.new('Brastemp', 4)
+     stove = Stove.new('Brastemp', 4)
 
-     fogao.ligar()
+     stove.turnOn()
 
-     assert_equal true, fogao.ligado?()
+     assert_equal true, stove.on?()
    end
 
-   def test_desligar
-     fogao = Fogao.new('Brastemp', 4)
+   def test_turn_off
+     stove = Stove.new('Brastemp', 4)
 
-     fogao.desligar()
+     stove.turnOff()
 
-     assert_equal false, fogao.ligado?()
+     assert_equal false, stove.on?()
    end
  end
