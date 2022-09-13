@@ -7,33 +7,33 @@ require './05_classes/app/fogao'
 # - Criar todos os métodos necessários
 class TestFogao < Minitest::Test
 
-  def test_fogao_lg
-    fogao = Fogao.new('LG', 6)
+  def test_stove_lg
+    stove = Stove.new('LG', 6)
 
-    assert_equal 'LG', fogao.marca()
-    assert_equal 6, fogao.qtd_bocas()
+    assert_equal 'LG', stove.brand()
+    assert_equal 6, stove.qtd_burners()
   end
 
-  def test_fogao_brastemp
-    fogao = Fogao.new('Brastemp', 4)
+  def test_stove_brastemp
+    stove = Stove.new('Brastemp', 4)
 
-    assert_equal 'Brastemp', fogao.marca()
-     assert_equal 4, fogao.qtd_bocas()
+    assert_equal 'Brastemp', stove.brand()
+     assert_equal 4, stove.qtd_burners()
   end
 
-   def test_ligar
-     fogao = Fogao.new('Brastemp', 4)
+   def test_on
+     stove = Stove.new('Brastemp', 4)
 
-     fogao.ligar()
+     stove.on()
 
-     assert_equal true, fogao.ligado?()
+     assert_equal true, stove.on?()
    end
 
-   def test_desligar
-     fogao = Fogao.new('Brastemp', 4)
+   def test_off
+     stove = Stove.new('Brastemp', 4)
 
-     fogao.desligar()
+     stove.off()
 
-     assert_equal false, fogao.ligado?()
+     assert_equal false, stove.on?()
    end
  end
