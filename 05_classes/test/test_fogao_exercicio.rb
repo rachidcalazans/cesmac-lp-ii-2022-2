@@ -7,14 +7,15 @@ require './05_classes/app/fogao'
 # - Criar todos os métodos necessários
 class TestFogao < Minitest::Test
 
-  def test_fogao_lg
+  def test_fogao_lg ()
     fogao = Fogao.new('LG', 6)
-
+    
     assert_equal 'LG', fogao.marca()
     assert_equal 6, fogao.qtd_bocas()
   end
 
   def test_fogao_brastemp
+     
     fogao = Fogao.new('Brastemp', 4)
 
     assert_equal 'Brastemp', fogao.marca()
@@ -22,6 +23,7 @@ class TestFogao < Minitest::Test
   end
 
    def test_ligar
+    
      fogao = Fogao.new('Brastemp', 4)
 
      fogao.ligar()
@@ -30,6 +32,7 @@ class TestFogao < Minitest::Test
    end
 
    def test_desligar
+    
      fogao = Fogao.new('Brastemp', 4)
 
      fogao.desligar()
