@@ -18,7 +18,7 @@ class TestFogao < Minitest::Test
     fogao = Fogao.new('Brastemp', 4)
 
     assert_equal 'Brastemp', fogao.marca()
-     assert_equal 4, fogao.qtd_bocas()
+    assert_equal 4, fogao.qtd_bocas()
   end
 
    def test_ligar
@@ -33,7 +33,7 @@ class TestFogao < Minitest::Test
      fogao = Fogao.new('Brastemp', 4)
 
      fogao.desligar()
-
-     assert_equal false, fogao.ligado?()
+     
+     assert_equal true, fogao.ligado?()
    end
  end
