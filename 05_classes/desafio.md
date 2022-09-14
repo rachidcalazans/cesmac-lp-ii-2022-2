@@ -20,5 +20,5 @@ O que precisar
 ## Métodos
 1. pessoas() -> Listagem de pessoas
 2. add_pessoa(nova_pessoa) -> Adiciona pessoa
-3. get_pessoa_pelo_ome_ompleto(nome_completo) -> Retorna uma pessoa filtrada pelo nome completo
+3. get_pessoa_pelo_nome_ompleto(nome_completo) -> Retorna uma pessoa filtrada pelo nome completo
 
