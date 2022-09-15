@@ -51,6 +51,7 @@ class TestGerenciarPessoa <Minitest::Test
         p2 = Pessoa.new('cristiano', 'ronaldo')
         p3 = Pessoa.new('neymar', 'junior')
         pessoa = [p1, p2, p3]
+        
         gerenciar_pessoa = GerenciarPessoa.new(pessoa)
 
         assert_equal [p1], gerenciar_pessoa.filtrar_pessoa('savyo almeida')
