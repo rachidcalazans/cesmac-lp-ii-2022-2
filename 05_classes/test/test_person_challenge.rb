@@ -24,24 +24,33 @@ class TestPerson < Minitest::Test
     assert_equal 'John von Neumann', full_name.full_name()
   end
 
-  def test_list_people
-    people = [Person.new(), Person.new()]
-    manager_people = ManagePerson.new(['John von Neumann', 'Alan Mathison Turing', 'William Henry Gates III', 'Mark Elliot Zuckeberg'])
-    assert_equal ['John von Neumann', 'Alan Mathison Turing', 'William Henry Gates III', 'Mark Elliot Zuckeberg'], manager_people.people
+  def test_get_person_by_full_name
+    people = [Person.new('Mark', 'Elliot Zuckeberg'), Person.new('William', 'Henry Gates III'), Person.new('Alan', 'Mathison Turing'), Person.new('John', 'von Neumann')]
+    manager_people = ManagePerson.new(people)
+    assert_equal 'William Henry Gates III', manager_people.get_person('William Henry Gates III')
+    assert_nil manager_people.get_person('Elon Reeve Musk')
   end
 
   def test_add_person
     new_person = Person.new('Steven', 'Paul Jobs')
-    full_name = new_person.full_name
-    people = ManagePerson.new(['John von Neumann', 'Alan Mathison Turing', 'William Henry Gates III', 'Mark Elliot Zuckeberg'])
-    people.add_person(full_name)
-    assert_equal ['John von Neumann', 'Alan Mathison Turing', 'William Henry Gates III', 'Mark Elliot Zuckeberg', 'Steven Paul Jobs'], people.people
+    p1 = Person.new('Mark', 'Elliot Zuckeberg')
+    p2 = Person.new('William', 'Henry Gates III')
+    p3 = Person.new('Alan', 'Mathison Turing')
+    p4 = Person.new('John', 'von Neumann')
+    people = [p1, p2, p3, p4]
+    manager_people = ManagePerson.new(people)
+    manager_people.add_person(new_person)
+    assert_equal [p1, p2, p3, p4, new_person], manager_people.people
   end
 
-  def test_get_person_by_full_name
-    people = ManagePerson.new(['John von Neumann', 'Alan Mathison Turing', 'William Henry Gates III', 'Mark Elliot Zuckeberg', 'Steven Paul Jobs'])
-    assert_equal 'William Henry Gates III', people.get_person('William Henry Gates III')
-    assert_equal false, people.get_person('Elon Reeve Musk')
+  def test_list_people
+    p1 = Person.new('Mark', 'Elliot Zuckeberg')
+    p2 = Person.new('William', 'Henry Gates III')
+    p3 = Person.new('Alan', 'Mathison Turing')
+    p4 = Person.new('John', 'von Neumann')
+    people = [p1, p2, p3, p4]
+    manager_people = ManagePerson.new(people)
+    assert_equal [p1, p2, p3, p4], manager_people.people
   end
 
  end

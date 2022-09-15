@@ -1,10 +1,12 @@
+require './05_classes/app/person'
+
 class ManagePerson
     def initialize(people)
         @people = people
     end
 
-    def add_person(full_name) #(person)
-        people.push(full_name)
+    def add_person(person)
+        @people.push(person)
     end
 
     def people
@@ -13,11 +15,11 @@ class ManagePerson
 
     def get_person(full_name)
         for person in @people do
-            if person.full_name() == full_name
-                return person
+            if person.full_name == full_name
+                return person.full_name
             end
         end
-        false
+        nil
     end
     
 end
