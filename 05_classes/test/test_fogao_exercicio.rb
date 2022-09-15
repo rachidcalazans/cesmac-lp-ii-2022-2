@@ -1,6 +1,6 @@
 require "minitest/autorun"
 # Importando a class Fogao que está nesse path
-require './05_classes/app/fogao'
+require '../app/fogao'
 
 # Exercício:
 # - Fazer todos os testes passarem. Não é para alterar nada nesse arquivo de teste.
