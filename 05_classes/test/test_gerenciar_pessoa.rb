@@ -42,8 +42,20 @@ class TestGerenciarPessoa <Minitest::Test
         pessoa = [p1, p2, p3]
         gerenciar_pessoa = GerenciarPessoa.new(pessoa)
         assert_equal [p1, p2, p3], gerenciar_pessoa.pessoa()
-      end
 
-      #não sei como fazer parte 3 do desafio "get_pessoa_pelo_nome_ompleto(nome_completo) 
-      #-> Retorna uma pessoa filtrada pelo nome completo" :c
+        assert_equal [p1], gerenciar_pessoa.filtrar_pessoa('savyo almeida')
+    end
+
+    def test_filtrar_pessoas
+        p1 = Pessoa.new('savyo', 'almeida')
+        p2 = Pessoa.new('cristiano', 'ronaldo')
+        p3 = Pessoa.new('neymar', 'junior')
+        pessoa = [p1, p2, p3]
+        gerenciar_pessoa = GerenciarPessoa.new(pessoa)
+
+        assert_equal [p1], gerenciar_pessoa.filtrar_pessoa('savyo almeida')
+        assert_equal [p2], gerenciar_pessoa.filtrar_pessoa('cristiano ronaldo')
+        assert_equal [], gerenciar_pessoa.filtrar_pessoa('thiago matheus')
+    end
+
 end

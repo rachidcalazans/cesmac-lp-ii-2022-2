@@ -13,7 +13,7 @@ class Pessoa
     end
 
     def nome_completo
-        @nome_completo = "#{nome()} #{sobrenome()}"
+        @nome_completo = "#{nome} #{sobrenome}"
     end
 
 end
