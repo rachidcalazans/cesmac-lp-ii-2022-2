@@ -1,4 +1,5 @@
 require "minitest/autorun"
+require './05_classes/app/pessoa'
 
 class TestPessoa < Minitest::Test
     def test_nome_completo
