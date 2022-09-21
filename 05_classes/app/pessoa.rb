@@ -1,6 +1,11 @@
 class Pessoa
+    def initialize(nome, sobrenome)
+        @nome = nome
+        @sobrenome = sobrenome 
+    end
+
     def nome_completo
-        'Alan Goto'
+        "#{@nome} #{@sobrenome}"
     end    
 end
     
