@@ -22,6 +22,9 @@ class TestGerenciarPessoa < Minitest::Test
     end
 
     def test_get_pessoa_pelo_nome_completo
+        p1 = Pessoa.new("Silvio", "Romero")
+        p2 = Pessoa.new("Mefius", "Pacifico")
+        gerenciar_pessoa = GerenciarPessoa.new([p1, p2])
         assert_equal p2, gerenciar_pessoa.get_pessoa_pelo_nome_completo("Mefius Pacifico")
     end
 
