@@ -21,4 +21,8 @@ class TestGerenciarPessoa < Minitest::Test
         assert_equal [p1], gerenciar_pessoa.pessoas
     end
 
+    def test_get_pessoa_pelo_nome_completo
+        assert_equal p2, gerenciar_pessoa.get_pessoa_pelo_nome_completo("Mefius Pacifico")
+    end
+
 end

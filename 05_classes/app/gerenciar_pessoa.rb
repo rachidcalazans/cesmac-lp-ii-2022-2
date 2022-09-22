@@ -7,7 +7,7 @@ class GerenciarPessoa
     end
 
     def add_pessoa(pessoa)
-        
+        @lista_pessoa << pessoa
     end
 
 end
