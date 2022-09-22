@@ -5,4 +5,9 @@ class GerenciarPessoa
     def pessoas
         @lista_pessoa 
     end
+
+    def add_pessoa(pessoa)
+        
+    end
+
 end

@@ -13,4 +13,12 @@ class TestGerenciarPessoa < Minitest::Test
         gerenciar_pessoa = GerenciarPessoa.new([p1])
         assert_equal [p1], gerenciar_pessoa.pessoas
     end
+
+    def test_add_pessoa
+        p1 = Pessoa.new('Afranio', 'Collor')
+        gerenciar_pessoa = GerenciarPessoa.new([])
+        gerenciar_pessoa.add_pessoa(p1)
+        assert_equal [p1], gerenciar_pessoa.pessoas
+    end
+
 end
