@@ -1,5 +1,8 @@
 class Petshop
-    def banho
+    def initialize 
+        @pets
+    end
+    def banho(pet)
     end
     def lista
         []
