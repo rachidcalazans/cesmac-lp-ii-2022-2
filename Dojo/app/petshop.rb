@@ -10,4 +10,8 @@ class Petshop
     end
     def tosa(pet)
         @pets << pet
+    end
+    def banho_tosa
+        @pets << pet
+    end
 end
