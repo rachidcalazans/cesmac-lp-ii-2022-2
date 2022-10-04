@@ -1,3 +1,7 @@
 require "minitest/autorun"
 
-class 
+class TestPetshop < Minitest::Test
+    def test_banho
+        assert_equal 1, petshop.banho 
+    end     
+end  
