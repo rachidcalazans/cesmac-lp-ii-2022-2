@@ -11,7 +11,7 @@ class Petshop
     def tosa(pet)
         @pets << pet
     end
-    def banho_tosa
+    def banho_tosa(pet)
         @pets << pet
     end
 end
