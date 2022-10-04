@@ -19,7 +19,11 @@ class TestPetshop < Minitest::Test
         assert_equal 1, petshop.lista.size
         assert_equal ["lula"], petshop.lista
     end   
-    def test_valor_total  
-        assert_equal 83.25
+    def test_valor_total
+        petshop = Petshop.new
+        petshop.banho("zeus")
+        petshop.tosa("simba")
+        petshop.banho_tosa("dom")
+        assert_equal 83.25, petshop.valor_total
     end
 end  
