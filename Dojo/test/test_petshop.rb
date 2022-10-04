@@ -6,5 +6,10 @@ class TestPetshop < Minitest::Test
         petshop.banho("zeus")
         assert_equal 1, petshop.lista.size 
         assert_equal "zeus", petshop.lista[0]
+    end
+    def test_tosa
+        petshop = Petshop.new
+        petshop.tosa("bolsonaro")
+        assert_equal 1, petshop.lista.size
     end     
 end  

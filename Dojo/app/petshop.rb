@@ -8,4 +8,6 @@ class Petshop
     def lista
         @pets
     end
+    def tosa(pet)
+        @pets << pet
 end
