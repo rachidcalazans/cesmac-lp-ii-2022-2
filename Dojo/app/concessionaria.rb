@@ -17,5 +17,7 @@ class Concessionaria
     end
   end
 
-  def 
+  def valor_total
+    @value
+  end
 end
