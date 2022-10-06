@@ -1,12 +1,14 @@
-class Concessionaria
+class Concessionary
+
+  attr_reader :cars, :value
 
   def initialize()
     @value = 0
     @cars = {corolla: 2, yaris:3}
   end
   
-  def compra(option)
-    if(option == 'yaris' && cars[:corolla] >= 1)
+  def buy(option)
+    if(option == 'yaris' && cars[:yaris] >= 1)
       @value += 120000
       @cars[:yaris] -= 1
     end
