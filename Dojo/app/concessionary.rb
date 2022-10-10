@@ -1,10 +1,11 @@
 class Concessionary
 
-  attr_reader :cars, :value
+  attr_reader :cars, :value, :stock
 
   def initialize()
     @value = 0
     @cars = {corolla: 2, yaris:3}
+    @stock = []
   end
   
   def buy(option)
@@ -21,5 +22,9 @@ class Concessionary
 
   def valor_total
     @value
+  end
+
+  def add_stock(car)
+    @stock << car
   end
 end
