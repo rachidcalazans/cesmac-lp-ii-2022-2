@@ -1,3 +1,5 @@
+require './prova_2/app/flau'
+
 class Vendinha
     def initialize 
         @total = 0
@@ -11,13 +13,13 @@ class Vendinha
 end 
 
 class Flau
-    def initialize nome , valor 
-        @nome = nome 
+    def initialize sabor , valor 
+        @sabor = nome 
         @valor = valor 
     end
     
-    def nome 
-        @nome
+    def sabor
+        @sabor
     end 
     
     def valor 
