@@ -72,4 +72,9 @@ class TestLittleShop < Minitest::Test
      # Billing
      assert_equal 13, @littleShop.totalValue
   end
+
+  def test_zero_stock_purchase
+    @guava.stock = 0
+    assert_equal 'No stock', @littleShop.buy(@guava)
+  end
 end
