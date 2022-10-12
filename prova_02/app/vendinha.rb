@@ -1,40 +1,36 @@
 require './prova_02/app/flau'
 
 class Venda
-    def initialize
-      @total_venda = 0
-      @flaus = 
-      [
-        Flau.new("Goiaba", 0.50),
-        Flau.new("Morango", 0.75),
-        Flau.new("Maçã Verde", 0.75),
-        Flau.new("Nescau com Nutela", 1.00),
-        Flau.new("Menta", 0.50)
-      ]
+  attr_accessor :total_venda
+  attr_accessor :flaus
+  
+  def initialize
+    @total_venda = 0
+    @flaus = 
+    [
+      Flau.new("Goiaba", 0.50, 10),
+      Flau.new("Morango", 0.75, 10),
+      Flau.new("Maçã Verde", 0.75, 10),
+      Flau.new("Nescau com Nutela", 1.00, 10),
+      Flau.new("Menta", 0.50, 10)
+    ]
+  end
 
-      for flau in @flaus
-        9.times do 
-          
-        end
+  def vender sabor
+    @flaus.map do |flau|
+      if flau.sabor == sabor and flau.quantidade > 1       
+          flau.quantidade -=  1
+          @total_venda += flau.preco 
       end
+      flau
     end
-  
-    def total_venda 
-      @total_venda
-    end
-  
-    def flaus 
-      @flaus
-    end
-  
-    def vender sabor
-      @flaus.each_with_index do |flau, index|
-        if flau.sabor == sabor
-          @total_venda += flau.preco
-          @flaus.delete_at index
-          break
-        end
-      end
-      self
-    end
-end 
+    self
+  end
+
+  def obter_quantidade sabor
+    flau = self.flaus.select { |flau| flau.sabor == sabor 
+    } 
+
+    flau.first.quantidade
+  end
+end
