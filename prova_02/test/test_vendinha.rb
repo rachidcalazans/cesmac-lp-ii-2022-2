@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require './prova_2/app/vendinha'
+require './prova_02/app/vendinha'
 
 
 
@@ -44,12 +44,4 @@ class TestVendinha < Minitest::Test
           assert_equal 46, venda.flaus.count
       end
         
-      for flau in venda.flaus  
-        puts(" Sabor: #{flau.sabor} 
-               Preço: #{flau.preco} 
-            ")
-      end
-  
-      puts "\tTotal: R$ #{venda.total_venda}"
-
 end
