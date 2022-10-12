@@ -18,7 +18,7 @@ class Venda
 
   def vender sabor
     @flaus.map do |flau|
-      if flau.sabor == sabor and flau.quantidade > 1       
+      if flau.sabor == sabor and flau.quantidade >= 1       
           flau.quantidade -=  1
           @total_venda += flau.preco 
       end
