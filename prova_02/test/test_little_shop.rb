@@ -38,27 +38,22 @@ class TestLittleShop < Minitest::Test
      # Maria, João and Pedro purchase
 
      for greenApple in 1..7 do
-      #greenApple = @greenApple
       @littleShop.buy(@greenApple)
      end
 
      for mint in 1..3 do
-      #mint = @mint
       @littleShop.buy(@mint)
      end
 
      for strawberry in 1..3 do
-      #strawberry = @strawberry
       @littleShop.buy(@strawberry)
      end
 
      for nescauNutella in 1..3 do
-      #nescauNutella = @nescauNutella
       @littleShop.buy(@nescauNutella)
      end
 
      for guava in 1..2 do
-      #guava = @guava
       @littleShop.buy(@guava)
      end
 
