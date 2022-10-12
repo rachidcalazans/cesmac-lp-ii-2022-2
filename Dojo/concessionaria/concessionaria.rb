@@ -4,6 +4,7 @@ class Concessionaria
         @corolla
         @valoryaris
         @valorcorolla
+        @vendas
     end
     def yaris
         @yaris = 3
@@ -18,13 +19,13 @@ class Concessionaria
         @corolla = 00,00
     end
     def estoque_yaris
-        @yaris = 2
+        @yaris = yaris - 1
     end
     def estoque_corolla
-        @corolla = 0
+        @corolla = corola -2
     end
     def vendas
-        @valoryaris = 120.000,00
-        @valorcorolla = 300.000,00
+        @vendas = 420.000,00
+        
     end
  end
