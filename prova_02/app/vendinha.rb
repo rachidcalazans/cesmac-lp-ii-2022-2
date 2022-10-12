@@ -31,6 +31,6 @@ class Venda
     flau = self.flaus.select { |flau| flau.sabor == sabor 
     } 
 
-    flaus.first.quantidade
+    flau.first.quantidade
   end
 end

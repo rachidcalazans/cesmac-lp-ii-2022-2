@@ -17,8 +17,8 @@ class TestVendinha < Minitest::Test
       assert_equal 10, venda.obter_quantidade("Morango")
       assert_equal 7, venda.obter_quantidade("Nescau com Nutela")
       assert_equal 9, venda.obter_quantidade("Menta")
-      assert_equal 10, venda.obter_quantidade("Maça Verde")
-      assert_equal 4.5, venda.valor_total
+      assert_equal 10, venda.obter_quantidade("Maçã Verde")
+      assert_equal 4.5, venda.total_venda
   end
 
   def test_cliente_joao
@@ -26,18 +26,18 @@ class TestVendinha < Minitest::Test
     .vender("Morango")
     .vender("Morango")
     .vender("Morango")
-    .vender("Maça Verde")
-    .vender("Maça Verde")
-    .vender("Maça Verde")
-    .vender("Maça Verde")
-    .vender("Maça Verde")
+    .vender("Maçã Verde")
+    .vender("Maçã Verde")
+    .vender("Maçã Verde")
+    .vender("Maçã Verde")
+    .vender("Maçã Verde")
 
     assert_equal 10, venda.obter_quantidade("Goiaba")
     assert_equal 7, venda.obter_quantidade("Morango")
     assert_equal 10, venda.obter_quantidade("Nescau com Nutela")
     assert_equal 10, venda.obter_quantidade("Menta")
-    assert_equal 5, venda.obter_quantidade("Maça Verde")
-    assert_equal 6.0, venda.valor_total
+    assert_equal 5, venda.obter_quantidade("Maçã Verde")
+    assert_equal 6.0, venda.total_venda
 
   end
 
@@ -45,16 +45,16 @@ class TestVendinha < Minitest::Test
     venda =  Venda.new
     .vender("Menta")
     .vender("Menta")
-    .vender("Maça Verde")
-    .vender("Maça Verde")
+    .vender("Maçã Verde")
+    .vender("Maçã Verde")
 
 
     assert_equal 10, venda.obter_quantidade("Goiaba")
     assert_equal 10, venda.obter_quantidade("Morango")
     assert_equal 10, venda.obter_quantidade("Nescau com Nutela")
     assert_equal 8, venda.obter_quantidade("Menta")
-    assert_equal 8, venda.obter_quantidade("Maça Verde")
-    assert_equal 2.5, venda.valor_total
+    assert_equal 8, venda.obter_quantidade("Maçã Verde")
+    assert_equal 2.5, venda.total_venda
 
 
   end
