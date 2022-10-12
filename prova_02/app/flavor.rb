@@ -7,4 +7,5 @@ class Flavors
     @stock = stock
     @value = value
   end
+
 end

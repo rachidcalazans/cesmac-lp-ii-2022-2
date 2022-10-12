@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require './prova_02/app/vendinha'
+require './prova_02/app/little_shop'
 require './prova_02/app/flavor'
 
 class TestVendinha < Minitest::Test 
@@ -14,14 +14,15 @@ class TestVendinha < Minitest::Test
     @littleShop = Shop.new
     
     @fruitStock = [@guava, @strawberry, @greenApple, @nescauNutella, @mint]
+    @littleShop.addStock(@fruitStock)
   end
 
   def test_total_value
     assert_equal 0, @littleShop.totalValue()
 
-    for a in 1..5 do
-      a = @guava
-      @littleShop.buy(a)
+    for product in 1..5 do
+      product = @guava
+      @littleShop.buy(product)
     end
 
     assert_equal 2.50, @littleShop.totalValue()
@@ -31,5 +32,44 @@ class TestVendinha < Minitest::Test
     @littleShop.buy(@guava)
     assert_equal 0.50, @littleShop.totalValue
     assert_equal 9, @guava.stock
+  end
+
+  def test_client_shop
+     # Maria, João and Pedro purchase
+
+     for greenApple in 1..7 do
+      greenApple = @greenApple
+      @littleShop.buy(greenApple)
+     end
+
+     for mint in 1..3 do
+      mint = @mint
+      @littleShop.buy(mint)
+     end
+
+     for strawberry in 1..3 do
+      strawberry = @strawberry
+      @littleShop.buy(strawberry)
+     end
+
+     for nescauNutella in 1..3 do
+      nescauNutella = @nescauNutella
+      @littleShop.buy(nescauNutella)
+     end
+
+     for guava in 1..2 do
+      guava = @guava
+      @littleShop.buy(guava)
+     end
+
+     # Stock Check
+     assert_equal 3, @greenApple.stock
+     assert_equal 7, @mint.stock
+     assert_equal 7, @strawberry.stock
+     assert_equal 7, @nescauNutella.stock
+     assert_equal 8, @guava.stock
+
+     # Billing
+     assert_equal 13, @littleShop.totalValue
   end
 end
