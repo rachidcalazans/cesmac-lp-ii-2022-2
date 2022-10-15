@@ -43,21 +43,21 @@ class Venda
         elsif (sabor == 'Maça verde')
             return @macaVerde.estoque
 
-        elsif (sabor == 'Nescau com Nutella')
-            return @nescauNutella.estoque
-
         elsif (sabor == 'Menta')
             return @menta.estoque
+
+        elsif (sabor == 'Nescau com Nutella')
+            return @nescauNutella.estoque
         end
     end
 
-    def calculateTotalAmount
-        totalVendidoGoiaba = (10 - @goiaba.estoque) * @goiaba.produto.valor  
-        totalVendidoMenta = (10 - @menta.estoque) * @menta.produto.valor  
-        totalVendidoMorango = (10 - @morango.estoque) * @morango.produto.valor  
-        totalVendidoNescauComNutella = (10 - @nescauNutella.estoque) * @nescauNutella.produto.valor  
-        totalVendidoMacaVerde = (10 - @macaVerde.estoque) * @macaVerde.produto.valor    
+    def total
+        totalGoiaba = (10 - @goiaba.estoque) * @goiaba.produto.valor  
+        totalMenta = (10 - @menta.estoque) * @menta.produto.valor  
+        totalMorango = (10 - @morango.estoque) * @morango.produto.valor  
+        totalNescauNutella = (10 - @nescauNutella.estoque) * @nescauNutella.produto.valor  
+        totalMacaVerde = (10 - @macaVerde.estoque) * @macaVerde.produto.valor    
 
-        return totalVendidoGoiaba + totalVendidoMenta + totalVendidoMorango + totalVendidoMacaVerde + totalVendidoNescauComNutella
+        return totalGoiaba + totalMenta + totalMorango + totalNescauNutella + totalMacaVerde
     end
 end

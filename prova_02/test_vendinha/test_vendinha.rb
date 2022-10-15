@@ -27,7 +27,7 @@ class TestVenda < Minitest::Test
         assert_equal 7, venda.estoque('Menta')
         assert_equal 7, venda.estoque('Nescau com Nutella')
 
-        assert_equal 13, venda.calculateTotalAmount
+        assert_equal 13, venda.total
     end
 end
 
