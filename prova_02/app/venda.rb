@@ -8,7 +8,7 @@ class Venda
 
     def initialize()
         @goiaba = Estoque.new(Produto.new('Goiaba', 0.50), 10)
-        @morango = Estoque.new(Produto.new('Morango', 0.75),10)
+        @morango = Estoque.new(Produto.new('Morango', 0.75), 10)
         @macaVerde = Estoque.new(Produto.new('Maçã verde', 0.75), 10)
         @nescauNutella = Estoque.new(Produto.new('Nescau com Nutella', 1), 10)
         @menta = Estoque.new(Produto.new('Menta', 0.50), 10)
