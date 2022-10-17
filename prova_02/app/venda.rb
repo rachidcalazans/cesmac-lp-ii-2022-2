@@ -45,7 +45,7 @@ class Venda
         elsif (sabor == 'Nescau com Nutella')
             return @nescauNutella.estoque
        
-        elsif (name == 'Menta')
+        elsif (sabor == 'Menta')
             return @menta.estoque
         end
     end

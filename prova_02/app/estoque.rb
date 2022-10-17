@@ -5,6 +5,7 @@ class Estoque
     def initialize (produto, estoque)
         @produto = produto
         @estoque = estoque
+       
     end
 
     def produto
@@ -12,7 +13,7 @@ class Estoque
     end
 
     def selecionarProduto(produto)        
-        @product = produto
+        @produto = produto
     end
 
     def estoque
@@ -25,5 +26,9 @@ class Estoque
 
     def venda(quantidade)
         @estoque = @estoque - quantidade
+    end
+
+    def saida
+        
     end
 end
