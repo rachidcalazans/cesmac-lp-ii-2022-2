@@ -17,16 +17,20 @@ class TestDesafio < Minitest::Test
   end
 
   def test_subtracao
+  assert_equal 0, calculadora(1, 1, '-')
   end
 
   def test_multiplicacao
+  assert_equal 2, calculadora(2, 1, '*')
   end
 
   def test_potencia
-  end
+  assert_equal 4 calculadora(2, "**")
+  end 
+
 
   def test_divisao
-  end
+  end 
 
   def test_modulo
   end
