@@ -4,7 +4,6 @@ require "minitest/autorun"
 # É necessário fazer a extensão do Minitest::Test para a classe poder ser identificada que
 # possui testes e para liberar métodos como: `assert_equal`, `assert_nil`
 class TestMinitest < Minitest::Test
-
   # É necessário ter o prefixo `test` na declaração do método de teste.
   # Isso fará com que a Gem minitest identifique o método na hora de executar os testes.
   def test_com_prefixo

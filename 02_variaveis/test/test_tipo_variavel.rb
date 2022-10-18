@@ -1,7 +1,6 @@
 require "minitest/autorun"
 
 class TestTipoVariavel < Minitest::Test
-
   def test_booleanos
     boolean1 = true
     boolean2 = false
@@ -21,7 +20,7 @@ class TestTipoVariavel < Minitest::Test
     assert_equal 1, inteiro
     assert_equal 1, inteiro2
     assert_equal inteiro, inteiro2
-    assert_equal inteiro.to_s, '1'
+    assert_equal inteiro.to_s, "1"
     assert_equal inteiro.to_s, "#{inteiro2}"
   end
 
@@ -35,16 +34,16 @@ class TestTipoVariavel < Minitest::Test
   end
 
   def test_strings
-    string1 = 'Uma nova string'
-    string2 = 'Uma outra string' + ' com ' + 'concatenação'
-    string3 = ''
-    string3 << 'Outra '
-    string3 << 'nova '
-    string3 << 'string'
+    string1 = "Uma nova string"
+    string2 = "Uma outra string" + " com " + "concatenação"
+    string3 = ""
+    string3 << "Outra "
+    string3 << "nova "
+    string3 << "string"
 
-    assert_equal 'Uma nova string', string1
-    assert_equal 'Uma outra string com concatenação', string2
-    assert_equal 'Outra nova string', string3
+    assert_equal "Uma nova string", string1
+    assert_equal "Uma outra string com concatenação", string2
+    assert_equal "Outra nova string", string3
   end
 
   # Tipo Array
@@ -55,49 +54,49 @@ class TestTipoVariavel < Minitest::Test
     assert_equal [1, 2, 3], array
     assert_equal 3, array.size
 
-    string_array = ['a', 'b', 'c']
+    string_array = %w[a b c]
 
-    assert_equal ['a', 'b', 'c'], string_array
+    assert_equal %w[a b c], string_array
     assert_equal 3, string_array.size
   end
 
   def test_pegar_primeiro_elemento_array
-    string_array = ['a', 'b', 'c']
+    string_array = %w[a b c]
 
-    assert_equal 'a', string_array[0]
-    assert_equal 'a', string_array.first
+    assert_equal "a", string_array[0]
+    assert_equal "a", string_array.first
   end
 
   def test_pegar_ultimo_elemento_array
-    string_array = ['a', 'b', 'c']
+    string_array = %w[a b c]
 
-    assert_equal 'c', string_array[2]
-    assert_equal 'c', string_array.last
-    assert_equal 'c', string_array[-1]
+    assert_equal "c", string_array[2]
+    assert_equal "c", string_array.last
+    assert_equal "c", string_array[-1]
   end
 
   def test_passar_index_que_nao_existe_array
-    string_array = ['a', 'b', 'c']
+    string_array = %w[a b c]
 
     assert_nil string_array[20]
   end
 
   def test_adicionar_elemento_no_array
-    string_array = ['a']
-    assert_equal ['a'], string_array
+    string_array = ["a"]
+    assert_equal ["a"], string_array
 
-    string_array << 'b'
-    assert_equal ['a', 'b'], string_array
+    string_array << "b"
+    assert_equal %w[a b], string_array
 
-    string_array.push 'c'
-    assert_equal ['a', 'b', 'c'], string_array
+    string_array.push "c"
+    assert_equal %w[a b c], string_array
   end
 
   def test_se_element_existe_no_array
-    string_array = ['a', 'b', 'c']
+    string_array = %w[a b c]
 
-    assert_equal true, string_array.include?('a')
-    assert_equal false, string_array.include?('z')
-    assert_equal false, string_array.include?('A')
+    assert_equal true, string_array.include?("a")
+    assert_equal false, string_array.include?("z")
+    assert_equal false, string_array.include?("A")
   end
 end

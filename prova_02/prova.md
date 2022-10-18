@@ -3,6 +3,7 @@ Nome da branch deverá ser com os nomes dos integrantes do grupo
 Grupo de três ou quatro pessoas
 
 A vendinha do seu João é famosa pelos seus flaus. Ele vende os seguintes sabores:
+
 1. Goiaba, custa R$ 0,50
 2. Morango, custa R$ 0,75
 3. Maçã Verde, custa R$ 0,75

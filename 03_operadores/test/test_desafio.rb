@@ -7,13 +7,12 @@ require "minitest/autorun"
 # Adicionar assert_equal para cada método de teste com seu respectivo operador
 
 class TestDesafio < Minitest::Test
-
   def calculadora(valor_a, valor_b, operador)
     return nil
   end
 
   def test_soma
-    assert_equal 2, calculadora(1, 1, '+')
+    assert_equal 2, calculadora(1, 1, "+")
   end
 
   def test_subtracao
