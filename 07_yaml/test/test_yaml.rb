@@ -35,5 +35,5 @@ class TestYaml < Minitest::Test
     assert_equal({ nome: 'Bob', tipo_animal: 'cachorro', castrado: true }, pets_carregados[1])
 
     assert_equal 'Princesa', pets_carregados.first[:nome]
-   end
+    end
 end
