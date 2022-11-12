@@ -1,5 +1,7 @@
 require 'minitest/autorun'
 
+# Início da prova Integrada - Compõe nota da P3
+
 class TestExercicio < Minitest::Test
   # Criar uma tabela 'sacoles' com as seguintes colunas:
   # 1. id => Int

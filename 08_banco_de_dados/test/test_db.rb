@@ -11,8 +11,17 @@ class TestDb < Minitest::Test
     db.execute 'INSERT INTO alunos (nome, participacao, matricula) VALUES (?, ?, ?)', 'Ze', 0, '001'
     db.execute 'INSERT INTO alunos (nome, participacao, matricula) VALUES (?, ?, ?)', 'Joao', 0, '002'
     results = db.execute 'SELECT nome, matricula, participacao FROM alunos WHERE matricula=?', '002'
-    results_array = results.to_a
+    # results = db.execute 'SELECT * FROM alunos'
+    results_array = results
 
-    assert_equal [], results_array
+    expected_result = [
+      {
+        'nome' => 'Joao',
+        'participacao' => 0,
+        'matricula' => '002'
+      },
+    ]
+    assert_equal 1, results_array.size
+    assert_equal results_array, expected_result
   end
 end
