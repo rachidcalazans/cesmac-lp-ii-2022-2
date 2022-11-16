@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'sqlite3'
 
 # Início da prova Integrada - Compõe nota da P3
 
@@ -48,5 +49,27 @@ class TestExercicio < Minitest::Test
   # 1. User CREATE TABLE para criar os bancos: mercadinhos, sacoles, estoques
   # 2. Usar SELECT com WHERE para filtrar
   # 3. Usar UPDATE com WHERE para atualizar o dado correto do banco
-  # 4. Usar INSERT para criar os sacolés, estoque e o mercadinho
+  # 4. Usar INSERT para criar os sacolés, estoque e o mercadinh
+
+  def test_create_db_sacole
+    db = SQLite3::Database.open 'sacole.db'
+    db.results_as_hash =  true
+
+    db.execute 'DROP TABLE IF EXISTS sacoles'
+    db.execute 'DROP TABLE IF EXISTS market'
+    db.execute 'DROP TABLE IF EXISTS storage'
+
+    #ceating market
+    db.execute 'CREATE TABLE market(market_id INTEGER PRIMARY KEY AUTOINCREMENT, market_name TEXT)'
+    db.execute 'INSERT INTO market (market_id, market_name) VALUES (?, ?)', 1, 'Mercadinho do Silvio'
+
+    #creating sacolesi
+    db.execute 'CREATE TABLE sacoles(sacoles_id INTEGER PRIMARY KEY AUTOINCREMENT, flavor TEXT, price REAL)'
+    db.execute 'INSERT INTO sacoles (sacoles_id, flavor, price) VALUES (?, ?, ?)', 1, 'Suco de Pau', 3.0
+
+    #creating storage
+    db.execute 'PRAGMA foregin_keys = ON'
+    resultForeginKey = db.execute 'PRAGMA foreign_keys'
+    assert_equal [{'foreign_keys' => 0}], resultForeginKey
+  end
 end
