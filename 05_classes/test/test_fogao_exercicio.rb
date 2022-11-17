@@ -22,7 +22,7 @@ class TestFogao < Minitest::Test
   end
 
    def test_ligar
-     fogao = Fogao.new('Brastemp', 4)
+    fogao = Fogao.new('Brastemp', 4)
 
      fogao.ligar()
 
@@ -30,7 +30,8 @@ class TestFogao < Minitest::Test
    end
 
    def test_desligar
-     fogao = Fogao.new('Brastemp', 4)
+    skip 
+    fogao = Fogao.new('Brastemp', 4)
 
      fogao.desligar()
 
