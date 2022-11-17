@@ -34,7 +34,59 @@ class TestSchedule < Minitest::Test
     lineArray = []
     test_text = File.foreach('prova_03/proposals.txt') do |line| lineArray.push(line.strip) end
 
-    minutes = Array.new(lineArray.map! do |string| string.match(/\d+/) end)
-    puts minutes
+    minutes = lineArray.map do |string| 
+      if(string.match(/lightning/)) 
+        string = '5'
+      end
+      string.match(/\d+/)[0].to_i
+    end
+    expected_minutes = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
+    assert_equal expected_minutes, minutes
   end
+
+  def test_giving_hours
+    year = Time.now.year
+    day = Time.now.day
+    month = Time.now.month
+    today_ref = Time.new(year, month, day, 9)
+    hours = today_ref.strftime("%k:%M").strip
+    single_hour = today_ref.strftime('%k').strip.to_i
+
+    assert_equal single_hour, 9
+    assert_equal 2022, year
+    assert_equal '9:00', hours
+  end
+
+  def test_generate_hour
+    lineArray = []
+    test_text = File.foreach('prova_03/proposals.txt') do |line| lineArray.push(line.strip) end
+
+    minutes = lineArray.map do |string| 
+      if(string.match(/lightning/)) 
+        string = '5'
+      end
+      string.match(/\d+/)[0].to_i
+    end
+
+    year = Time.now.year
+    day = Time.now.day
+    month = Time.now.month
+    today_ref = Time.new(year, month, day, 9)
+    hours = today_ref.strftime("%k:%M").strip
+    single_hour = today_ref.strftime('%k').strip.to_i
+
+    sum = 0
+    arrayMinutes = []
+    minutes.each_with_index do |minute, index|
+      if sum == 180
+        break
+      elsif((sum + minute) <= 180) 
+        sum += minute
+        puts sum
+        arrayMinutes.push(index)
+      end
+    end
+  end
+
+
 end
