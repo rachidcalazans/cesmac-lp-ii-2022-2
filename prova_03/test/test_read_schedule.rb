@@ -72,7 +72,6 @@ class TestSchedule < Minitest::Test
     day = Time.now.day
     month = Time.now.month
     today_ref = Time.new(year, month, day, 9)
-    hours = today_ref.strftime("%k:%M").strip
     single_hour = today_ref.strftime('%k').strip.to_i
 
     sum = 0
@@ -82,10 +81,23 @@ class TestSchedule < Minitest::Test
         break
       elsif((sum + minute) <= 180) 
         sum += minute
-        puts sum
         arrayMinutes.push(index)
       end
     end
+
+    for phrase in arrayMinutes do
+      puts "#{today_ref.strftime('%k:%M').strip} #{lineArray[phrase]}"
+      if(minutes[phrase] == 60) 
+        today_ref += 3600
+      else
+        today_ref += (60 * minutes[phrase])
+      end
+      if((today_ref.strftime('%k:%M').strip) == '12:00') 
+        puts "#{today_ref.strftime('%k:%M').strip} Hora do almoço"
+        today_ref += 3600
+      end
+    end
+
   end
 
 
