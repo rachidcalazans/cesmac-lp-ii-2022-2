@@ -1,31 +1,21 @@
 class Conferencia
-    def initialize(track, horario, palestra)
-        @track = track
-        @horario = horario
-        @palestra = palestra
+    def initialize(arquivo)
+        @arquivo = arquivo
+        @palestras = File.readlines(@arquivo, chomp: true)
+        @duracao
     end
 
-    def get_track
-        @track
+    def listar_palestras
+        return @palestras
     end
 
-    def set_track=(track)
-        @track = track
-    end
-
-    def get_horario
-        @horario
-    end
-
-    def set_horario=(horario)
-        @horario = horario
-    end
-
-    def get_palestra
-        @palestra
-    end
-
-    def set_palestra=(palestra)
-        @palestra = palestra
+    def listar_duracao_palestras
+        @duracao = @palestras.map do |minutes|
+            if (minutes.match(/lightning/))
+                minutes = '5'
+            end
+            minutes.match(/\d+/)[0].to_i
+        end
+        return @duracao
     end
 end
