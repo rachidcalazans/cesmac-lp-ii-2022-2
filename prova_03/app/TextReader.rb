@@ -6,17 +6,13 @@ class TextReader
     @textLines
   end
 
-  def read_file
-    read_line()
-  end
-
-  def read_line
+  def read_lines
     @textLines = []
     test_text = File.foreach(@file) do |line| @textLines.push(line.strip) end
     return @textLines
   end
 
-  def get_line_hours
+  def get_minutes
     @minutes = @textLines.map do |string| 
       if(string.match(/lightning/)) 
         string = '5'

@@ -15,6 +15,7 @@ Observe que, dependendo de como você decida completar esse problema, sua soluç
 Mas o resultado produzido deverá atender às regras especificadas.
 
 ## Dados a serem usados para teste:
+
 Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
 
 Reinventando a roda em ASP clássico 45min
@@ -53,10 +54,10 @@ Um mundo sem StackOverflow 30min
 
 Otimizando CSS em aplicações Rails 30min
 
-
 ## Modelo do resultado esperado após execução da organização:
 
 #### Track A:
+
 09:00 Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
 
 10:00 Reinventando a roda em ASP clássico 45min
@@ -82,6 +83,7 @@ Otimizando CSS em aplicações Rails 30min
 17:00 Evento de Networking
 
 #### Track B:
+
 09:00 Trabalho remoto: prós e cons 60min
 
 10:00 A mágica do Rails: como ser mais produtivo 60min
@@ -105,9 +107,10 @@ Otimizando CSS em aplicações Rails 30min
 17:00 Evento de Networking
 
 ## Instruções
+
 Você deve produzir uma solução para o problema acima utilizando **Ruby**.
 
-No diretório, você encontrará o arquivo ***proposals.txt***, que contém a lista de palestras que deverão ser organizadas. Seu programa deverá ser capaz de ler este arquivo e processar cada uma das palestras, para que o resultado seja exibido no formato especificado no exemplo exibido acima.
+No diretório, você encontrará o arquivo **_proposals.txt_**, que contém a lista de palestras que deverão ser organizadas. Seu programa deverá ser capaz de ler este arquivo e processar cada uma das palestras, para que o resultado seja exibido no formato especificado no exemplo exibido acima.
 
 Além de verificar se sua solução satisfaz as regras do problema, também avaliaremos outros aspectos, como o design de sua solução e seu domínio do paradigma da linguagem escolhida. Nós esperamos que você encaminhe um código que acredite ser de qualidade, um código que funcione e que tenha sido evoluído no decorrer de seu desenvolvimento.
 
