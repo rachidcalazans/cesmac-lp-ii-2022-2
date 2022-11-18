@@ -74,31 +74,36 @@ class TestSchedule < Minitest::Test
     today_ref = Time.new(year, month, day, 9)
     single_hour = today_ref.strftime('%k').strip.to_i
 
-    sum = 0
-    arrayMinutes = []
-    minutes.each_with_index do |minute, index|
-      if sum == 180
-        break
-      elsif((sum + minute) <= 180) 
-        sum += minute
-        arrayMinutes.push(index)
-      end
-    end
+    morningTrack = []
+    afternoonTrack = []
+    morning_time = 180
+    afternoon_time = 240
 
-    for phrase in arrayMinutes do
-      puts "#{today_ref.strftime('%k:%M').strip} #{lineArray[phrase]}"
-      if(minutes[phrase] == 60) 
-        today_ref += 3600
-      else
-        today_ref += (60 * minutes[phrase])
+    # minute while
+      minutes.reverse.each_with_index do |minute, index|
+        if ((morning_time - minute) >= 0)
+          morning_time -= minute
+          morningTrack.push(index)
+          minutes.delete_at(index)
+        elsif ((afternoon_time - minute) >= 0)
+          afternoon_time -= minute
+          afternoonTrack.push(index)
+          minutes.delete_at(index)
+        else
+          break
+        end
       end
-      if((today_ref.strftime('%k:%M').strip) == '12:00') 
-        puts "#{today_ref.strftime('%k:%M').strip} Hora do almoço"
-        today_ref += 3600
-      end
-    end
 
+    p minutes
+    p morningTrack
+    p 'm'
+    p afternoonTrack 
+    p 'a'
+
+    # morning track
+    morningTrack.each do |minute|
+      p "#{today_ref.strftime('%k:%M').strip} #{lineArray.reverse[minute]}"
+
+    end
   end
-
-
 end

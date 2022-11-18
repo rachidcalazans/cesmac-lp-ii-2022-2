@@ -1,4 +1,4 @@
-class Reader
+class TextReader
 
   def initialize(file)
     @file = file 
@@ -8,20 +8,13 @@ class Reader
 
   def read_file
     read_line()
-    @textLines
   end
-
-  def schedule
-    get_line_hours()
-  end
-
-  private 
 
   def read_line
     @textLines = []
     test_text = File.foreach(@file) do |line| @textLines.push(line.strip) end
     return @textLines
-  end 
+  end
 
   def get_line_hours
     @minutes = @textLines.map do |string| 
@@ -32,14 +25,5 @@ class Reader
     end
     @minutes
   end
-
-  def todays_list
-    morning_time = 180
-    afternoon_time = 240
-
-    # @minutes.each_with_index do |minute, index|
-    # end
-  end
-
 
 end
