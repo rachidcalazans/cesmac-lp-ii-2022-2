@@ -1,12 +1,11 @@
 require 'minitest/autorun'
-require './prova_03/app/Reader.rb'
+require './prova_03/app/TextReader.rb'
 
 class TestReader < Minitest::Test
   def test_reader_instance
-    notesEvent = TextReader.new('./prova_04/proposals.txt')
-    notesEvent.read_file
-    
-    assert_equal notesEvent.read_file, expected_file_line = [
+    notesEvent = TextReader.new('./prova_03/proposals.txt')
+
+    assert_equal notesEvent.read_lines, expected_file_line = [
       'Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min',
       'Reinventando a roda em ASP clássico 45min',
       'Apresentando Lua para as massas 30min',
@@ -28,7 +27,7 @@ class TestReader < Minitest::Test
       'Otimizando CSS em aplicações Rails 30min'
     ]
 
-    assert_equal notesEvent.schedule,
+    assert_equal notesEvent.get_minutes,
     expected_minutes = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
   end
 end
