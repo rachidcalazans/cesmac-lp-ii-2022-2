@@ -1,89 +1,15 @@
 require "minitest/autorun"
 require "date"
+require './prova_03/app/functions'
 
-class TestExercicio < Minitest::Test
+class TestLectures < Minitest::Test
 
   def test_1
+    tracks = make_schedule('proposals.txt')
+    expected = [{"Trabalho remoto: prós e cons 60min"=>"09:00", "Ruby on Rails: Por que devemos deixá-lo para trás 60min"=>"10:00", "A mágica do Rails: como ser mais produtivo 60min"=>"11:00", "Manutenção de aplicações legadas em Ruby on Rails 60min"=>"13:00", "Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min"=>"14:00", "Reinventando a roda em ASP clássico 45min"=>"15:00", "Erros comuns em Ruby 45min"=>"15:45", "Um mundo sem StackOverflow 30min"=>"16:30"},
+      {"Erros de Ruby oriundos de versões erradas de gems 45min"=>"09:00", "Clojure engoliu Scala: migrando minha aplicação 45min"=>"09:45", "Programação em par 45min"=>"10:30", "Desenvolvimento orientado a gambiarras 45min"=>"11:15", "Ruby vs. Clojure para desenvolvimento backend 30min"=>"13:00", "Ensinando programação nas grotas de Maceió 30min"=>"13:30", "Codifique menos, Escreva mais! 30min"=>"14:00", "Aplicações isomórficas: o futuro (que talvez nunca chegaremos) 30min"=>"14:30", "Otimizando CSS em aplicações Rails 30min"=>"15:00", "Apresentando Lua para as massas 30min"=>"15:30", "Rails para usuários de Django lightning"=>"16:00"}]
 
-    # DECLARE ALL VARIABLES
-    #all_lectures = File.readlines('prova_03/proposals.txt').map(&:chomp)
-    all_lectures = {}
-
-    schedule_morning = {}  # final
-    schedule_afternoon = {} # final
-
-    tracks = []
-
-    #READ THE FILE
-    File.foreach("prova_03/proposals.txt") do |line|
-      if line != "" and line != "\n"
-        all_lectures[line[0..-2]] = line[-6..-5]
-      end
-    end
-
-    # SCHEDULE THE TRACKS
-    while not all_lectures.empty? do
-
-      track_time_morning = 60 * 3
-      track_time_afternoon = (60 * 4) - 1
-
-      time = DateTime.new(2022, 11, 17, 9, 0)
-      # FILL THE MORNING SCHEDULE
-      all_lectures.each do |key, value|
-        if value == 'tn'
-          duration = 5
-        else
-          duration = value.to_i
-        end
-
-        if duration <= track_time_morning
-          schedule_morning[key] = time.strftime("%H:%M")
-          all_lectures.delete(key)
-          track_time_morning -= duration
-          time += (1.0/24/60) * duration
-        end
-
-        if track_time_morning <= 0
-          break
-        end
-      end
-
-      time = DateTime.new(2022, 11, 17, 13, 0)
-      # FILL THE AFTERNOON SCHEDULE 
-      all_lectures.each do |key, value|
-        if value == 'tn'
-          duration = 5
-        else
-          duration = value.to_i
-        end
-
-        if duration <= track_time_afternoon
-          schedule_afternoon[key] = time.strftime("%H:%M")
-          all_lectures.delete(key)
-          track_time_afternoon -= duration
-          time += (1.0/24/60) * duration
-        end
-
-        if track_time_afternoon <= 0
-          break
-        end
-      end
-    end
-
-    # PRINT THE TRACKS
-    puts("TRACK A:")
-    schedule_morning.each do |key, value|
-      puts("\n" + value + " " + key)
-    end
-
-    puts("\n12:00 Almoço")
-
-    schedule_afternoon.each do |key, value|
-      puts("\n" + value + " " + key)
-    end
-
-    puts("\n" + time.strftime("%H:%M") + "  Networking")
-
+    assert_equal expected, tracks
   end
 
 

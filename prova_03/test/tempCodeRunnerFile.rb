@@ -1,3 +1,1 @@
-schedule_morning} \n")
-    print("\n")
-    print("#{
+read_file('proposals.txt')
