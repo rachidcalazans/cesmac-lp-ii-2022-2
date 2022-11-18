@@ -12,8 +12,7 @@ class TestExercicio < Minitest::Test
     schedule_morning = {}  # final
     schedule_afternoon = {} # final
 
-    track_time_morning = 60 * 3
-    track_time_afternoon = (60 * 4) - 1
+    tracks = []
 
     #READ THE FILE
     File.foreach("prova_03/proposals.txt") do |line|
@@ -22,49 +21,57 @@ class TestExercicio < Minitest::Test
       end
     end
 
-    time = DateTime.new(2022, 11, 17, 9, 0)
-    # FILL THE MORNING SCHEDULE
-    all_lectures.each do |key, value|
-      if value == 'tn'
-        duration = 5
-      else
-        duration = value.to_i
+    # SCHEDULE THE TRACKS
+    while not all_lectures.empty? do
+
+      track_time_morning = 60 * 3
+      track_time_afternoon = (60 * 4) - 1
+
+      time = DateTime.new(2022, 11, 17, 9, 0)
+      # FILL THE MORNING SCHEDULE
+      all_lectures.each do |key, value|
+        if value == 'tn'
+          duration = 5
+        else
+          duration = value.to_i
+        end
+
+        if duration <= track_time_morning
+          schedule_morning[key] = time.strftime("%H:%M")
+          all_lectures.delete(key)
+          track_time_morning -= duration
+          time += (1.0/24/60) * duration
+        end
+
+        if track_time_morning <= 0
+          break
+        end
       end
 
-      if duration <= track_time_morning
-        schedule_morning[key] = time.strftime("%H:%M")
-        all_lectures.delete(key)
-        track_time_morning -= duration
-        time += (1.0/24/60) * duration
-      end
+      time = DateTime.new(2022, 11, 17, 13, 0)
+      # FILL THE AFTERNOON SCHEDULE 
+      all_lectures.each do |key, value|
+        if value == 'tn'
+          duration = 5
+        else
+          duration = value.to_i
+        end
 
-      if track_time_morning <= 0
-        break
+        if duration <= track_time_afternoon
+          schedule_afternoon[key] = time.strftime("%H:%M")
+          all_lectures.delete(key)
+          track_time_afternoon -= duration
+          time += (1.0/24/60) * duration
+        end
+
+        if track_time_afternoon <= 0
+          break
+        end
       end
     end
 
-    time = DateTime.new(2022, 11, 17, 13, 0)
-    # FILL THE AFTERNOON SCHEDULE 
-    all_lectures.each do |key, value|
-      if value == 'tn'
-        duration = 5
-      else
-        duration = value.to_i
-      end
-
-      if duration <= track_time_afternoon
-        schedule_afternoon[key] = time.strftime("%H:%M")
-        all_lectures.delete(key)
-        track_time_afternoon -= duration
-        time += (1.0/24/60) * duration
-      end
-
-      if track_time_afternoon <= 0
-        break
-      end
-    end
-
-    puts("Track A:")
+    # PRINT THE TRACKS
+    puts("TRACK A:")
     schedule_morning.each do |key, value|
       puts("\n" + value + " " + key)
     end
