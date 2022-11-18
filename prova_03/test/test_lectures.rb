@@ -65,11 +65,14 @@ class TestExercicio < Minitest::Test
     end
 
     puts("Track A:")
-
     schedule_morning.each do |key, value|
       puts("\n" + value + " " + key)
     end
 
+    puts("\nTrack B:")
+    schedule_afternoon.each do |key, value|
+      puts("\n" + value + " " + key)
+    end
 
   end
 
