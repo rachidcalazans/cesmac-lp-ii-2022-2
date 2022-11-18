@@ -69,10 +69,13 @@ class TestExercicio < Minitest::Test
       puts("\n" + value + " " + key)
     end
 
-    puts("\nTrack B:")
+    puts("\n12:00 Almoço")
+
     schedule_afternoon.each do |key, value|
       puts("\n" + value + " " + key)
     end
+
+    puts("\n" + time.strftime("%H:%M") + "  Networking")
 
   end
 
