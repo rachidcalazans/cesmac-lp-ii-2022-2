@@ -2,6 +2,8 @@ require "minitest/autorun"
 
 require './prova_03/app/conferencia'
 
+require 'time'
+
 
 class TestConferencia < Minitest::Test
 
@@ -38,6 +40,14 @@ class TestConferencia < Minitest::Test
         expected_minutes = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
 
         assert_equal conferencia.listar_duracao_palestras, expected_minutes
+    end
+
+    def test_horario
+        conferencia = Conferencia.new('./prova_03/proposals.txt')
+        expected_horario = ["9:00"]
+
+        assert_equal expected_horario, conferencia.listar_horarios
+
     end
 
 end

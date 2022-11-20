@@ -1,12 +1,15 @@
+require 'time'
+
 class Conferencia
     def initialize(arquivo)
         @arquivo = arquivo
         @palestras = File.readlines(@arquivo, chomp: true)
         @duracao
+        @horario = Time.new(2022,11,21,9)
     end
 
     def listar_palestras
-        return @palestras
+        @palestras
     end
 
     def listar_duracao_palestras
@@ -16,6 +19,13 @@ class Conferencia
             end
             minutes.match(/\d+/)[0].to_i
         end
-        return @duracao
+        @duracao
+    end
+
+    def listar_horarios
+        lista_horarios = []
+        lista_horarios.push(@horario.strftime("%k:%M").strip)
+
+        return lista_horarios
     end
 end
