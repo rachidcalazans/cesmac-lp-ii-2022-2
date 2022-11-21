@@ -71,5 +71,31 @@ class TestExercicio < Minitest::Test
     db.execute 'PRAGMA foregin_keys = ON'
     resultForeginKey = db.execute 'PRAGMA foreign_keys'
     assert_equal [{'foreign_keys' => 0}], resultForeginKey
+    db.execute 'CREATE TABLE storage(storage_id INTEGER PRIMARY KEY AUTOINCREMENT, market_id INTEGER, sacoles_id INTEGER, sold BOOLEAN, FOREIGN KEY (market_id) REFERENCES market(market_id), FOREIGN KEY (sacoles_id) REFERENCES sacoles(sacoles_id))'
+    db.execute 'INSERT INTO storage(market_id, sacoles_id, sold) VALUES(?, ?, ?)', 1, 1, 0
+
+    resultMarket = db.execute 'SELECT * FROM market WHERE market_id=?', 01
+
+    resultSacoles = db.execute 'SELECT * FROM sacoles WHERE sacoles_id=?', 01
+
+    resultStorage = db.execute 'SELECT * FROM storage WHERE storage_id'
+
+    expected_result_market = [
+      {
+        'market_id' => 1,
+        'market_name' => 'Mercadinho do Silvio'
+      }
+    ]
+
+    expected_result_sacoles = [
+      {
+        'sacoles_id' => 1,
+        'flavor' => 'Suco de Pau',
+        'price' => 3.0
+      }
+    ]
+
+    assert_equal resultMarket, expected_result_market
+    assert_equal resultSacoles, expected_result_sacoles
   end
 end
