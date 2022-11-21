@@ -7,7 +7,7 @@ class TestConferencia < minitest::Test
 
        conferencia = conferencia.new("./prova_03/proposals.txt")
 
-       coparandoconferencia = [
+       comparandoconferencia = [
             'Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min',
             'Reinventando a roda em ASP clássico 45min',
             'Apresentando Lua para as massas 30min',
@@ -29,4 +29,14 @@ class TestConferencia < minitest::Test
             'Otimizando CSS em aplicações Rails 30min'
         ]
 
-        assert_equal conferencia.
+        assert_equal conferencia.organizarPalestras, comparandoconferencia
+    end
+
+    def testTempoPalestra
+        conferencia = conferencia.new('./prova_03/proposals.txt')
+        expected = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
+        
+        assert_equal conferencia.organizar_tempoPalestras, expected
+    end   
+
+end    
