@@ -1,6 +1,9 @@
 require './prova_03/proposals'
+require 'time'
 
-class Paletras 
+class Workshop
+
+    
 
 
 
