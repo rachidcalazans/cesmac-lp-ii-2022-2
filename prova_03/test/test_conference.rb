@@ -49,8 +49,35 @@ class TestConference < Minitest::Test
         assert_equal expected_duration, conference.duration
     end
 
-    def test_hours
+    def test_morning_hours
         headlines = File.readlines('./prova_03/proposals.txt', chomp: true)
         conference = Conference.new(nil, headlines)
+
+        conference.duration = conference.headlines.map do |min|
+            if (min.match(/lightning/))
+                min = '5'
+            end
+            min.match(/\d+/)[0].to_i
+        end
+
+        expected_morning_hours = ["9:00", "10:00", "10:45", "11:15", "12:00"]
+
+        assert_equal expected_morning_hours, conference.list_morning_hours
+    end
+
+    def test_afternoon_hours
+        headlines = File.readlines('./prova_03/proposals.txt', chomp: true)
+        conference = Conference.new(nil, headlines)
+
+        conference.duration = conference.headlines.map do |min|
+            if (min.match(/lightning/))
+                min = '5'
+            end
+            min.match(/\d+/)[0].to_i
+        end
+
+        expected_afternoon_hours = ["13:00", "13:45", "13:50", "14:50", "15:35", "16:05"]
+
+        assert_equal expected_afternoon_hours, conference.list_afternoon_hours
     end
 end
