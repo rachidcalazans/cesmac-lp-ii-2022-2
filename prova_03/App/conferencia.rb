@@ -1,4 +1,4 @@
-require './prova_03/proposals'
+
 require 'time'
 
 class Workshop
@@ -31,10 +31,5 @@ class Workshop
         return organizar_tempoPalestras
 
     end
-        
-    def 
-
-    
-
 
 end 

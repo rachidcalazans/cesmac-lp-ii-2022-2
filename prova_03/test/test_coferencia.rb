@@ -1,8 +1,7 @@
 require 'minitest/autorun'
-require './prova_03/app/coferencia'
-require './prova_03/proposals'
+require './prova_03/app/conferencia'
 
-class TestConferencia < minitest::Test
+class TestConferencia < Minitest::Test
     def Test_conferencia
 
        conferencia = conferencia.new("./prova_03/proposals.txt")
@@ -39,7 +38,12 @@ class TestConferencia < minitest::Test
         assert_equal conferencia.organizar_duracaoPalestras, expected
     end   
 
-    def testorganizar_tempoPalestras
-        
+    def testehorario
+        conferencia = conferencia.new('./prova_03/proposals.txt')
+        expectedhorario = ["9:00"]
+
+        assert_equal expectedhorario, conferencia.organizar_tempoPalestras
+    end    
+
 
 end    
