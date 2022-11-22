@@ -1,7 +1,7 @@
 ---
-- :nome: Princesa
-  :tipo_animal: gato
-  :castrado: false
-- :nome: Bob
-  :tipo_animal: cachorro
-  :castrado: true
+- :nome: Ze
+  :matricula: '0001'
+- :nome: Joao
+  :matricula: '0002'
+- :nome: Maria
+  :matricula: '0003'
