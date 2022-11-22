@@ -1,5 +1,0 @@
-{
-    "recommendations": [
-        "formulahendry.code-runner"
-    ]
-}
