@@ -5,7 +5,7 @@ require './prova_03/app/conferencia'
 class TestConferencia < Minitest::Test
     def Test_conferencia
 
-       conferencia = conferencia.new("./prova_03/proposals.txt")
+       conferencia = Conferencia.new("./prova_03/proposals.txt")
 
        comparandoconferencia = [
             'Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min',
@@ -33,14 +33,14 @@ class TestConferencia < Minitest::Test
     end
 
     def testTempoPalestra
-        conferencia = conferencia.new('./prova_03/proposals.txt')
-        expected = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
+        conferencia = Conferencia.new('./prova_03/proposals.txt')
+        expectedTempo = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
         
-        assert_equal conferencia.organizar_duracaoPalestras, expected
+        assert_equal conferencia.organizar_duracaoPalestras, expectedTempo
     end   
 
     def testehorario
-        conferencia = conferencia.new('./prova_03/proposals.txt')
+        conferencia = Conferencia.new('./prova_03/proposals.txt')
         expectedhorario = ["9:00"]
 
         assert_equal expectedhorario, conferencia.organizar_tempoPalestras
