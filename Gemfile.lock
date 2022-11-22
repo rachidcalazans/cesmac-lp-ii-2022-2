@@ -2,9 +2,11 @@ GEM
   remote: http://rubygems.org/
   specs:
     minitest (5.16.2)
+    sqlite3 (1.5.3-x64-mingw-ucrt)
     sqlite3 (1.5.3-x86_64-darwin)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-darwin-21
 
 DEPENDENCIES
