@@ -10,7 +10,7 @@ class Workshop
     end
 
      
-    def organizar_tempoPalestras
+    def organizar_duracaoPalestras
         @tempopalestra = @palestras.map do |minutes|
             if (minutes.match(/lightning/))
                 minutes = '5'
@@ -30,7 +30,11 @@ class Workshop
 
         return organizar_tempoPalestras
 
+    end
+        
     def 
+
+    
 
 
 end 

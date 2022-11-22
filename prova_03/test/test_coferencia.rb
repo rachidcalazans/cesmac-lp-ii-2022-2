@@ -36,7 +36,10 @@ class TestConferencia < minitest::Test
         conferencia = conferencia.new('./prova_03/proposals.txt')
         expected = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
         
-        assert_equal conferencia.organizar_tempoPalestras, expected
+        assert_equal conferencia.organizar_duracaoPalestras, expected
     end   
+
+    def testorganizar_tempoPalestras
+        
 
 end    
