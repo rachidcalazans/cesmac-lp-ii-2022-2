@@ -17,4 +17,3 @@ Ruby vs. Clojure para desenvolvimento backend 30min
 Manutenção de aplicações legadas em Ruby on Rails 60min
 Um mundo sem StackOverflow 30min
 Otimizando CSS em aplicações Rails 30min
-

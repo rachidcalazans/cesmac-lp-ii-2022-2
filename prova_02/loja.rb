@@ -35,7 +35,3 @@ class Loja
     @SaboresEmestoque.push sabores
   end
 end
-
-
-
-  
