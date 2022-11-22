@@ -1,16 +1,14 @@
 require "minitest/autorun"
-
-require './prova_03/app/conferencia'
-
+require './prova_03/app/conference'
 require 'time'
 
+class TestConference < Minitest::Test
 
-class TestConferencia < Minitest::Test
+    def test_headline
+        headlines = File.readlines('./prova_03/proposals.txt', chomp: true)
+        conference = Conference.new(nil, headlines)
 
-    def test_conferencia_palestra
-        conferencia = Conferencia.new("./prova_03/proposals.txt")
-
-        expected_list_palestras = [
+        expected_list_headlines = [
             'Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min',
             'Reinventando a roda em ASP clássico 45min',
             'Apresentando Lua para as massas 30min',
@@ -31,23 +29,28 @@ class TestConferencia < Minitest::Test
             'Um mundo sem StackOverflow 30min',
             'Otimizando CSS em aplicações Rails 30min'
         ]
-    
-        assert_equal conferencia.listar_palestras, expected_list_palestras
+
+        assert_equal expected_list_headlines, conference.headlines
     end
 
-    def test_conferencia_duracao
-        conferencia = Conferencia.new('./prova_03/proposals.txt')
-        expected_minutes = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
+    def test_duration
+        headlines = File.readlines('./prova_03/proposals.txt', chomp: true)
+        conference = Conference.new(nil, headlines)
 
-        assert_equal conferencia.listar_duracao_palestras, expected_minutes
+        conference.duration = conference.headlines.map do |min|
+            if (min.match(/lightning/))
+                min = '5'
+            end
+            min.match(/\d+/)[0].to_i
+        end
+
+        expected_duration = [60, 45, 30, 45, 45, 5, 60, 45, 30, 30, 45, 60, 60, 45, 30, 30, 60, 30, 30]
+
+        assert_equal expected_duration, conference.duration
     end
 
-    def test_horario
-        conferencia = Conferencia.new('./prova_03/proposals.txt')
-        expected_horario = ["9:00"]
-
-        assert_equal expected_horario, conferencia.listar_horarios
-
+    def test_hours
+        headlines = File.readlines('./prova_03/proposals.txt', chomp: true)
+        conference = Conference.new(nil, headlines)
     end
-
 end
