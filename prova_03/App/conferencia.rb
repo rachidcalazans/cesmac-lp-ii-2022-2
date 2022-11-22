@@ -1,7 +1,7 @@
 
 require 'time'
 
-class Workshop
+class Conferencia
     def initialize(lista_palestra)
         @lista_palestra = lista_palestra
         @palestras = File.readlines(@lista_paletra, chomp: true)
