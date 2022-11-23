@@ -6,7 +6,7 @@ class Palestras
         @duracao = duracao 
         @horario = horario 
         
-
+        
     end
 
 end    
