@@ -2,14 +2,41 @@
 
 Você está planejando uma grande conferencia de programação e recebeu diversas propostas de palestras, mas você está com problemas para organizá-las de acordo com as restrições de tempo do dia - existem tantas possibilidades! Então, você decide escrever um programa para fazer isso por você.
 
-1. A conferencia tem várias tracks, cada qual tendo uma sessão pela manhã e outra pela tarde.
-2. Cada sessão contém várias palestras.
-3. Sessões pela manhã começam às 9h e devem terminar às 12h, para o almoço.
-4. Sessões pela tarde começam às 13h e devem terminar a tempo de realizar o evento de networking.
-5. O evento de networking deve começar depois das 16h, mas antes das 17h.
-6. Nenhum dos nomes das palestras possui números.
-7. A duração de todas as palestras são fornecidas em minutos ou definidas como lightning (palestras de 5 minutos).
-8. Os palestrantes serão bastante pontuais, então não há a necessidade de intervalos entre as palestras.
+
+
+
+
+ 1. A conferencia tem várias tracks, cada qual tendo uma sessão pela manhã e outra pela tarde.
+
+
+
+ 2. Cada sessão contém várias palestras.
+
+
+
+ 3. Sessões pela manhã começam às 9h e devem terminar às 12h, para o almoço.
+
+
+
+ 4. Sessões pela tarde começam às 13h e devem terminar a tempo de realizar o evento de networking.
+
+
+
+ 5. O evento de networking deve começar depois das 16h, mas antes das 17h.
+ 6. Nenhum dos nomes das palestras possui números.
+
+
+
+ 7. A duração de todas as palestras são fornecidas em minutos ou definidas 
+ como lightning (palestras de 5 minutos).
+
+
+
+ 8. Os palestrantes serão bastante pontuais, então não há a necessidade de intervalos entre as palestras.
+
+
+
+
 
 Observe que, dependendo de como você decida completar esse problema, sua solução pode trazer as palestras em ordem ou combinação diferentes dentro das tracks. Isso é aceitável; você não precisa replicar, exatamente, o resultado fornecido como exemplo de solução.
 Mas o resultado produzido deverá atender às regras especificadas.
