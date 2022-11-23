@@ -13,7 +13,7 @@ def read_file(file_name)
       end
     end
   end
-    return all_lectures.sort_by{ |k, v| v}.reverse.to_h
+  return all_lectures.sort_by{ |k, v| v}.reverse.to_h
 end
 
 

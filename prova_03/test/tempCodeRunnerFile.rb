@@ -1,1 +1,1 @@
-read_file('proposals.txt')
+
