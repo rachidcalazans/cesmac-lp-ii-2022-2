@@ -43,3 +43,4 @@
 16:00 Rails para usuários de Django lightning 60min
 
 17:00 Evento de Networking
+
