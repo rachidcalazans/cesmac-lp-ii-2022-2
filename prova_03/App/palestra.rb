@@ -9,4 +9,8 @@ class Palestras
         conferencia.atualizarHora @duracao
     end
 
+    def formatar
+        "#{@horario.strftime("%H:%M")} #{@nome}\n"
+      end
+
 end    
