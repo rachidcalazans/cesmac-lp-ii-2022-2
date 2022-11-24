@@ -1,0 +1,45 @@
+09:00 Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
+
+10:00 Reinventando a roda em ASP clássico 45min
+
+10:45 Apresentando Lua para as massas 30min
+
+11:15 Erros de Ruby oriundos de versões erradas de gems 45min
+
+12:00 Almoço
+
+13:00 Erros comuns em Ruby 45min
+
+13:45 Rails para usuários de Django lightning
+
+13:50 Trabalho remoto: prós e cons 60min
+
+14:50 Desenvolvimento orientado a gambiarras 45min
+
+15:35 Aplicações isomórficas: o futuro (que talvez nunca chegaremos) 30min
+
+16:05 Codifique menos, Escreva mais! 30min
+
+16:35 Programação em par 45min
+
+17:00 Evento de Networking
+
+09:20 A mágica do Rails: como ser mais produtivo 60min
+
+10:20 Ruby on Rails: Por que devemos deixá-lo para trás 60min
+
+11:20 Clojure engoliu Scala: migrando minha aplicação 45min
+
+12:00 Almoço
+
+13:05 Ensinando programação nas grotas de Maceió 30min
+
+13:35 Ruby vs. Clojure para desenvolvimento backend 30min
+
+14:05 Manutenção de aplicações legadas em Ruby on Rails 60min
+
+15:05 Um mundo sem StackOverflow 30min
+
+15:35 Otimizando CSS em aplicações Rails 30min
+
+17:00 Evento de Networking
