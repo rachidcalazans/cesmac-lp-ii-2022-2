@@ -1,4 +1,3 @@
-require_relative 'conferencia'
-require_relative 'proposals.txt'
+require './conferencia'
 
-Conferencia.new("proposals.txt").organizarPalestras 
+Conferencia.new("../proposals.txt").organizar_palestras

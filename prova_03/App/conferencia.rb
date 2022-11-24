@@ -1,29 +1,26 @@
-require_relative 'palestra'
+require './palestra'
 
-class Conferencia 
-    attr_accessor :arquivo, :palestras, :horarioPalestras, :comecoPalestras
+class Conferencia
+    attr_accessor :arquivo, :palestras, :horario, :HORA_INICIAL
 
-     def initialize arquivoPalestras
-        @comecoPalestras
-        @arquivo = File.readlines(arquivoPalestras, chomp: true)
-        @horario = Time.new(2022,11,23,@comecoPalestras)
+     def initialize caminho_arquivo
+        @HORA_INICIAL = 9
+        @arquivo = File.readlines(caminho_arquivo, chomp: true)
+ 	    @horario = Time.new(2022,11,23,@HORA_INICIAL)
 
-        self.procurarPalestras
-     end 
+        self.obter_palestras
+     end
 
-
-
-     def procurarPalestras	
+     def obter_palestras	
         @palestras = @arquivo.map { |palestra| Palestra.new(palestra, palestra.include?("lightning") ? 5 : palestra.match(/\d+/)[0].to_i, @horario, self)}
      end
 
-
-     def organizarPalestras arquivo1 = "palestras.txt"
-		if !File.exists?(arquivo1)
-	       File.new(arquivo1, "w+") 
+    def organizar_palestras nome_arquivo = "palestras.txt"
+		if !File.exists?(nome_arquivo)
+	       File.new(nome_arquivo, "w+") 
         end
 
-        File.open(arquivo1, "w") { |file| @palestras.each { |palestra| 
+        File.open(nome_arquivo, "w") { |file| @palestras.each { |palestra| 
             linha = palestra.formatar
 
             if palestra.horario.hour == 11 && palestra.horario.min + palestra.duracao > 59
@@ -40,8 +37,7 @@ class Conferencia
         }
     end
 
-
-    def atualizarHora duracao 
+    def atualizar_horario duracao 
         hora = @horario.hour
         minuto = @horario.min + duracao
 
@@ -54,11 +50,10 @@ class Conferencia
            end
 
            if hora == 17
-              hora = comecoPalestras
+              hora = @HORA_INICIAL
            end
         end
 
         @horario = Time.new(2022,11,23,hora,minuto)
     end
-
-end    
+end
