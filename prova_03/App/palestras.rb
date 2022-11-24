@@ -6,7 +6,7 @@ class Palestras
         @duracao = duracao 
         @horario = horario 
         
-        
+        conferencia.atualizarHora @duracao
     end
 
 end    

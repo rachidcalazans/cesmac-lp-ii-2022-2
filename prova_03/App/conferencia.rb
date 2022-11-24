@@ -41,7 +41,7 @@ class Conferencia
     end
 
 
-    def atualizar_horario duracao 
+    def atualizarHora duracao 
         hora = @horario.hour
         minuto = @horario.min + duracao
 
@@ -60,12 +60,5 @@ class Conferencia
 
         @horario = Time.new(2022,11,23,hora,minuto)
     end
-
-
-
-
-
-
-
 
 end    
