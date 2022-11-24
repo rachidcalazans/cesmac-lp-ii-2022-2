@@ -30,7 +30,7 @@ Repositório focado para turma de Laboratório de Programação II - Cesmac - 20
 ## Git
 
 ### Baixando o projeto pela primeira vez
-
+ 
 1. Abrir VScode -> Menu superior - Terminal -> Novo Terminal
 2. Você irá baixar o projeto utilizando um comando do git. Executar no terminal:
   - `git clone https://github.com/rachidcalazans/cesmac-lp-ii-2022-2.git`
