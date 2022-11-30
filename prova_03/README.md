@@ -25,6 +25,9 @@ Erros de Ruby oriundos de versões erradas de gems 45min
 
 Erros comuns em Ruby 45min
 
+
+
+
 Rails para usuários de Django lightning
 
 Trabalho remoto: prós e cons 60min
