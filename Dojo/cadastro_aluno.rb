@@ -3,7 +3,6 @@ require "sqlite3"
 
 class TestMatricula < Minitest::Test 
     def test_db
-        skip
         db = SQLite3::Database.open 'alunos.db'
         db.results_as_hash = true
 
@@ -14,24 +13,18 @@ class TestMatricula < Minitest::Test
             nome TEXT NOT NULL
         )'
 
-        matricula = '00012345'
-      
+        matricula_maria = '00012345'
+        nome_maria = 'Maria Antonieta'
+        matricula_joao = '00054321'
+        nome_joao = 'João Carlos' 
         
-        db.execute('INSERT INTO aluno(matricula, nome) VALUES (?, ?)', matricula, 'Maria Antonieta')
+        db.execute('INSERT INTO aluno(matricula, nome) VALUES (?, ?)', matricula_maria, nome_maria)
+        db.execute('INSERT INTO aluno(matricula, nome) VALUES (?, ?)', matricula_joao, nome_joao)
         
-        results_aluno = db.execute('SELECT matricula, nome FROM aluno')
+        results_maria = db.execute('SELECT nome, matricula FROM aluno WHERE matricula = ?', '00012345')
+        results_joao = db.execute('SELECT nome, matricula FROM aluno WHERE matricula = ?', '00054321')
 
-        puts results_aluno
-    end
-
-    def test_regex
-        has = /\d+min/.match('Programação em par 45min\n')
-
-        lista.each do |palestra|
-            duracao = /\d+min/.match(palestra)
-    
-        end
-        pp "HERE"
-        puts has
+        puts results_maria
+        puts results_joao
     end
 end
