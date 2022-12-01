@@ -4,52 +4,62 @@ require './Dojo/app/functions'
 
 class TestDb < Minitest::Test
 
-  def test_nome
-    aluno = Aluno.new('aldo1', '001')
-    aluno.check_nome
+  def test_name
+    student1 = Student.new('Aldo1', '001')
+    student2 = Student.new('Maria', '002')
+    student3 = Student.new('  ', '003')
+    student4 = Student.new('', '004')
+
+    expected_result_student1 = 'Invalid name.'
+    expected_result_student3 = 'You must insert a name.'
+    expected_result_student4 = 'You must insert a name.'
+
+    assert_equal expected_result_student1, student1.check_name
+    assert_nil student2.check_name
+    assert_equal expected_result_student3, student3.check_name
+    assert_equal expected_result_student4, student4.check_name
   end
 
-  # def test_db
-  #   db = SQLite3::Database.open 'test.db'
-  #   db.results_as_hash = true
-  #   db.execute 'CREATE TABLE IF NOT EXISTS alunos(nome TEXT, matricula TEXT, participacao INT)'
-  #   # db.execute 'DELETE FROM alunos'
-  #   db.execute 'INSERT INTO alunos (nome, participacao, matricula) VALUES (?, ?, ?)', 'Ze', 0, '001'
-  #   db.execute 'INSERT INTO alunos (nome, participacao, matricula) VALUES (?, ?, ?)', 'Joao', 0, '002'
-  #   results = db.execute 'SELECT nome, matricula, participacao FROM alunos WHERE matricula=?', '002'
-  #   # results = db.execute 'SELECT * FROM alunos'
-  #   results_array = results
+  def test_registration_number
+    student1 = Student.new('Aldo', '0a01')
+    student2 = Student.new('Maria', '002')
+    student3 = Student.new('Jimmy', '  ')
+    student4 = Student.new('Harry', '')
 
-  #   expected_result = [
-  #     {
-  #       'nome' => 'Joao',
-  #       'participacao' => 0,
-  #       'matricula' => '002'
-  #     },
-  #   ]
-  #   assert_equal 1, results_array.size
-  #   assert_equal results_array, expected_result
-  # end
+    expected_result_student1 = 'Invalid registration number.'
+    expected_result_student3 = 'You must insert a registration number.'
+    expected_result_student4 = 'You must insert a registration number.'
 
-  # def test_db
-  #   db = SQLite3::Database.open 'test.db'
-  #   db.results_as_hash = true
-  #   db.execute 'CREATE TABLE IF NOT EXISTS alunos(nome TEXT, matricula TEXT, participacao INT)'
-  #   db.execute 'DELETE FROM alunos'
-  #   db.execute 'INSERT INTO alunos (nome, participacao, matricula) VALUES (?, ?, ?)', 'Ze', 0, '001'
-  #   db.execute 'INSERT INTO alunos (nome, participacao, matricula) VALUES (?, ?, ?)', 'Joao', 0, '002'
-  #   results = db.execute 'SELECT nome, matricula, participacao FROM alunos WHERE matricula=?', '002'
-  #   # results = db.execute 'SELECT * FROM alunos'
-  #   results_array = results
+    assert_equal expected_result_student1, student1.check_registration_number
+    assert_nil student2.check_name
+    assert_equal expected_result_student3, student3.check_registration_number
+    assert_equal expected_result_student4, student4.check_registration_number
+  end
 
-  #   expected_result = [
-  #     {
-  #       'nome' => 'Joao',
-  #       'participacao' => 0,
-  #       'matricula' => '002'
-  #     },
-  #   ]
-  #   assert_equal 1, results_array.size
-  #   assert_equal results_array, expected_result
-  # end
+  def test_registration_number_exists
+    student1 = Student.new('Aldo', '001')
+    student2 = Student.new('Maria', '002')
+
+    expected_result = 'This registration number already exists.'
+
+    assert_equal expected_result, student1.check_registration_number_exists
+    assert_nil student2.check_registration_number_exists
+  end
+
+  def test_save_data
+    student1 = Student.new('Aldo', '001')
+    student2 = Student.new('Maria', '002')
+    student3 = Student.new('Jimmy', '003')
+    student4 = Student.new('1Harry', 'a004')
+
+    expected_result_student1 = 'Something went wrong. Try again.'
+    expected_result_student2 = 'Registration saved.'
+    expected_result_student3 = 'Registration saved.'
+    expected_result_student4 = 'Something went wrong. Try again.'
+
+    assert_equal expected_result_student1, student1.save_data
+    assert_equal expected_result_student2, student2.save_data
+    assert_equal expected_result_student3, student3.save_data
+    assert_equal expected_result_student4, student4.save_data
+  end
 end
