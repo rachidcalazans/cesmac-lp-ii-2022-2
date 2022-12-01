@@ -1,6 +1,7 @@
 class Schedule
 
-  attr_accessor :hour_ref, :trackA, :trackB
+  attr_accessor :hour_ref, :track_a, :track_b
+  
   def initialize(list, hours)
     @list = list
     @hours = hours
