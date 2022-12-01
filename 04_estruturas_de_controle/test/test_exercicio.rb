@@ -6,9 +6,10 @@ require "minitest/autorun"
   # Caso seja um número inválido, retornar message de erro
 
 def mes_por_int(mes)
-  if mes == 1
+  
+if mes == 1
   'jan'
-  elsif mes == 2
+elsif mes == 2
   'Fev'
 elsif mes == 3
   'Mar'
