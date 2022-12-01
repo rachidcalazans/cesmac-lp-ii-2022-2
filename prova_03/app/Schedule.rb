@@ -46,8 +46,8 @@ class Schedule
   end
 
   def tracker_generator
-    @trackA = []
-    @trackB = []
+    @track_a = []
+    @track_b = []
     for i in 0..1 do
       sumMorning = 180 # 3 hours
       sumAfternoon = 240 # 4 hours
@@ -66,16 +66,16 @@ class Schedule
         end
       end
       # Fullfiling the arrays
-      if(@trackA.size != 0) 
-        @trackB = [morningArr, afternoonArr]
+      if(@track_a.size != 0) 
+        @track_b = [morningArr, afternoonArr]
       else
-        @trackA = [morningArr, afternoonArr]
+        @track_a = [morningArr, afternoonArr]
       end
     end
   end
 
   def tracker_printer
-  tracks = [@trackA, @trackB]
+  tracks = [@track_a, @track_b]
 
     tracks.each do |track|
     if(tracks[0] == track)

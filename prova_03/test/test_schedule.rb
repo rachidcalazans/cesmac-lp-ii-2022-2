@@ -70,14 +70,13 @@ class TestSchedule < Minitest::Test
     schedule = Schedule.new(lines, hours)
     schedule.hash_generator()
     schedule.time_generator()
-
     schedule.tracker_generator()
 
     expected_trackA = [[{:hour=>30, :text=>"Otimizando CSS em aplicações Rails 30min"}, {:hour=>30, :text=>"Um mundo sem StackOverflow 30min"}, {:hour=>60, :text=>"Manutenção de aplicações legadas em Ruby on Rails 60min"}, {:hour=>30, :text=>"Ruby vs. Clojure para desenvolvimento backend 30min"}, {:hour=>30, :text=>"Ensinando programação nas grotas de Maceió 30min"}], [{:hour=>45, :text=>"Clojure engoliu Scala: migrando minha aplicação 45min"}, {:hour=>60, :text=>"Ruby on Rails: Por que devemos deixá-lo para trás 60min"}, {:hour=>60, :text=>"A mágica do Rails: como ser mais produtivo 60min"}, {:hour=>45, :text=>"Programação em par 45min"}, {:hour=>30, :text=>"Codifique menos, Escreva mais! 30min"}]]
-    assert_equal schedule.trackA, expected_trackA
+    assert_equal schedule.track_a, expected_trackA
 
     expected_trackB = [[{hour: 30, text: "Aplicações isomórficas: o futuro (que talvez nunca chegaremos) 30min"}, {hour: 45, text: "Desenvolvimento orientado a gambiarras 45min"}, {:hour=>60, :text=>"Trabalho remoto: prós e cons 60min"}, {:hour=>5, :text=>"Rails para usuários de Django lightning"}, {:hour=>30, :text=>"Apresentando Lua para as massas 30min"}], [{:hour=>45, :text=>"Erros comuns em Ruby 45min"}, {:hour=>45, :text=>"Erros de Ruby oriundos de versões erradas de gems 45min"}, {:hour=>45, :text=>"Reinventando a roda em ASP clássico 45min"}, {:hour=>60, :text=>"Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min"}]]
-    assert_equal schedule.trackB, expected_trackB
+    assert_equal schedule.track_b, expected_trackB
   end
 
   def test_tracker_printer
@@ -111,8 +110,8 @@ class TestSchedule < Minitest::Test
     assert_equal check_file, true
 
     assert_equal '9:00', schedule.hour_ref
-    assert_equal schedule.trackA.empty?, false
-    assert_equal schedule.trackB.empty?, false
+    assert_equal schedule.track_a.empty?, false
+    assert_equal schedule.track_b.empty?, false
 
     file = File.open('prova_03/proposals.txt')
     file_data = file.readlines.map(&:chomp)
