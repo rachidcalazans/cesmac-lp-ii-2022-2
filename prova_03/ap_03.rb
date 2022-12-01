@@ -14,7 +14,10 @@ class Proposals < Minitest::Test
             line [line]
         end
         
-        puts speeches
+        speeches.insert(4, "Almoço")
+        speeches.insert(12, "Evento de Networking")
+        puts speeches[0..4]
+
     end
 
 
