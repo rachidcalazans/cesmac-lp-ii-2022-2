@@ -1,7 +1,8 @@
 class Fogao
-  def initialize(marca, qtd_bocas)
-    @marca = marca
-    @qtd_bocas = qtd_bocas
+  
+  def initialize(marca, qtd_bocas,ligado)
+    @marca = 'LG'
+    @qtd_bocas = 6
     @ligado = nil
   end
 end
