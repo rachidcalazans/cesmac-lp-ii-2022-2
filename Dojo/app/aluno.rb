@@ -2,6 +2,8 @@ require './Dojo/app/gerenciar_aluno'
 
 class Aluno
 
+  attr_reader :nome, :matricula
+
   def initialize(nome, matricula)
     @nome = nome
     @matricula = matricula
